@@ -1,0 +1,1 @@
+import{j as r,r as e,L as s,O as t}from"./index-C-2ruJA2.js";const n=()=>r.jsx(r.Fragment,{children:r.jsx("p",{children:"Header"})}),a=()=>r.jsx(r.Fragment,{children:r.jsx("p",{children:"Footer"})}),o=()=>r.jsxs(r.Fragment,{children:[r.jsx(n,{}),r.jsx("main",{children:r.jsx(e.Suspense,{fallback:r.jsx(s,{}),children:r.jsx(t,{})})}),r.jsx(a,{})]});export{o as default};
