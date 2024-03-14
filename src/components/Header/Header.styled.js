@@ -13,7 +13,7 @@ export const HeaderContainer = styled.div`
     padding-top: 12px;
     padding-bottom: 12px;
   }
-  @media (min-width: 1440px) {
+  @media (min-width: 1280px) {
     padding-top: 6px;
     padding-bottom: 6px;
   }
@@ -187,7 +187,7 @@ export const ThemeSwitcher = styled.div`
     gap: 24px;
   }
 
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: 1280px) {
     width: 60px;
     height: 24px;
     gap: 24px;
@@ -212,7 +212,7 @@ export const ThemeSwitcher = styled.div`
       transform: translateX(-3px);
     }
 
-    @media screen and (min-width: 1440px) {
+    @media screen and (min-width: 1280px) {
       width: 18px;
       height: 18px;
       transform: translateX(-2px);
@@ -242,7 +242,7 @@ export const ThemeSwitcher = styled.div`
       transform: translateX(-3px) rotate(180deg);
     }
 
-    @media screen and (min-width: 1440px) {
+    @media screen and (min-width: 1280px) {
       top: 19%;
       width: 15px;
       height: 15px;
@@ -259,7 +259,7 @@ export const IconMoon = styled.svg`
     width: 11px;
     height: 11px;
   }
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: 1280px) {
     width: 13px;
     height: 13px;
   }
@@ -273,7 +273,7 @@ export const IconSun = styled.svg`
     width: 11px;
     height: 11px;
   }
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: 1280px) {
     width: 13px;
     height: 13px;
   }

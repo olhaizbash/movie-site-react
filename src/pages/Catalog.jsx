@@ -1,7 +1,9 @@
+import Hero from "../components/Hero/Hero";
+
 const Catalog = () => {
   return (
     <>
-      <p>Hello from catalog!</p>
+      <Hero />
     </>
   );
 };
