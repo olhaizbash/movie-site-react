@@ -1,4 +1,4 @@
-import{u as i,N as d,r as p,j as e,L as x,O as h}from"./index-D1pCP7Pn.js";const c=i.div`
+import{u as i,N as d,r as p,j as e,L as x,O as h}from"./index-tYMiKJON.js";const c=i.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -10,7 +10,7 @@ import{u as i,N as d,r as p,j as e,L as x,O as h}from"./index-D1pCP7Pn.js";const
     padding-top: 12px;
     padding-bottom: 12px;
   }
-  @media (min-width: 1440px) {
+  @media (min-width: 1280px) {
     padding-top: 6px;
     padding-bottom: 6px;
   }
@@ -164,7 +164,7 @@ z-index: 2;
     gap: 24px;
   }
 
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: 1280px) {
     width: 60px;
     height: 24px;
     gap: 24px;
@@ -189,7 +189,7 @@ z-index: 2;
       transform: translateX(-3px);
     }
 
-    @media screen and (min-width: 1440px) {
+    @media screen and (min-width: 1280px) {
       width: 18px;
       height: 18px;
       transform: translateX(-2px);
@@ -219,7 +219,7 @@ z-index: 2;
       transform: translateX(-3px) rotate(180deg);
     }
 
-    @media screen and (min-width: 1440px) {
+    @media screen and (min-width: 1280px) {
       top: 19%;
       width: 15px;
       height: 15px;
@@ -234,7 +234,7 @@ z-index: 2;
     width: 11px;
     height: 11px;
   }
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: 1280px) {
     width: 13px;
     height: 13px;
   }
@@ -246,8 +246,8 @@ z-index: 2;
     width: 11px;
     height: 11px;
   }
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: 1280px) {
     width: 13px;
     height: 13px;
   }
-`,k="/movie-site-react/assets/favicon-V8-NnNKM.svg",r="/movie-site-react/assets/sprite-9YzRhiOm.svg",L=()=>{const[n,t]=p.useState(!1);return e.jsxs("header",{children:[e.jsxs(c,{children:[e.jsxs(l,{to:"/",children:[e.jsx(m,{children:e.jsx("use",{href:k+"#logo"})}),e.jsx(g,{children:"Cinemania"})]}),e.jsx(u,{className:n?"nav-active":"",children:e.jsxs(w,{children:[e.jsx(o,{children:e.jsx(a,{to:"/",onClick:()=>{t(!1)},children:"Home"})}),e.jsx(o,{children:e.jsx(a,{to:"/catalog",onClick:()=>{t(!1)},children:"Catalog"})}),e.jsx(o,{children:e.jsx(a,{to:"/mylibrary",onClick:()=>{t(!1)},children:"My library"})})]})}),e.jsx(f,{onClick:()=>{t(!n)},children:"Menu"}),e.jsxs(v,{children:[e.jsx(j,{children:e.jsx("use",{href:`${r}#icon-moon`})}),e.jsx(y,{children:e.jsx("use",{href:`${r}#icon-sun`})})]})]}),e.jsx(b,{className:n?"backdrop-open":"",onClick:s=>{s.target===s.currentTarget?t(!n):t(!0)}})]})},N=()=>e.jsx(e.Fragment,{children:e.jsx("p",{children:"Footer"})}),z=()=>e.jsxs(e.Fragment,{children:[e.jsx(L,{}),e.jsx("main",{children:e.jsx(p.Suspense,{fallback:e.jsx(x,{}),children:e.jsx(h,{})})}),e.jsx(N,{})]});export{z as default};
+`,k="/movie-site-react/assets/favicon-V8-NnNKM.svg",r="/movie-site-react/assets/sprite-9YzRhiOm.svg",L=()=>{const[n,t]=p.useState(!1);return e.jsx("header",{children:e.jsxs("div",{className:"container",children:[e.jsxs(c,{children:[e.jsxs(l,{to:"/",children:[e.jsx(m,{children:e.jsx("use",{href:k+"#logo"})}),e.jsx(g,{children:"Cinemania"})]}),e.jsx(u,{className:n?"nav-active":"",children:e.jsxs(w,{children:[e.jsx(o,{children:e.jsx(a,{to:"/",onClick:()=>{t(!1)},children:"Home"})}),e.jsx(o,{children:e.jsx(a,{to:"/catalog",onClick:()=>{t(!1)},children:"Catalog"})}),e.jsx(o,{children:e.jsx(a,{to:"/mylibrary",onClick:()=>{t(!1)},children:"My library"})})]})}),e.jsx(f,{onClick:()=>{t(!n)},children:"Menu"}),e.jsxs(v,{children:[e.jsx(j,{children:e.jsx("use",{href:`${r}#icon-moon`})}),e.jsx(y,{children:e.jsx("use",{href:`${r}#icon-sun`})})]})]}),e.jsx(b,{className:n?"backdrop-open":"",onClick:s=>{s.target===s.currentTarget?t(!n):t(!0)}})]})})},N=()=>e.jsx(e.Fragment,{children:e.jsx("p",{children:"Footer"})}),z=()=>e.jsxs(e.Fragment,{children:[e.jsx(L,{}),e.jsx("main",{children:e.jsx(p.Suspense,{fallback:e.jsx(x,{}),children:e.jsx(h,{})})}),e.jsx(N,{})]});export{z as default};
