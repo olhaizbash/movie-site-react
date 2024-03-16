@@ -1,4 +1,4 @@
-import{u as i,N as d,a as h,s as x,b as g,r,j as t,c as m,L as b,O as u}from"./index-Db1PJ6rJ.js";import{C as f}from"./Container-CFeWB98h.js";const v=i.div`
+import{u as i,N as l,a as h,s as x,b as g,r,j as t,c as m,L as b,O as u}from"./index-CowjYem8.js";import{C as f}from"./Container-BaXvtXEI.js";const v=i.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -14,7 +14,7 @@ import{u as i,N as d,a as h,s as x,b as g,r,j as t,c as m,L as b,O as u}from"./i
     padding-top: 6px;
     padding-bottom: 6px;
   }
-`,k=i(d)`
+`,k=i(l)`
   display: flex;
   align-items: center;
 `,j=i.svg`
@@ -34,6 +34,7 @@ import{u as i,N as d,a as h,s as x,b as g,r,j as t,c as m,L as b,O as u}from"./i
 `,y=i.span`
   display: none;
   color: ${({theme:e})=>e.color.logoText};
+  transition: color ${({theme:e})=>e.transition.main};
 
   @media (min-width: ${({theme:e})=>e.breakpoint.mobile}) {
     opacity: 0;
@@ -68,6 +69,7 @@ color:  ${({theme:e})=>e.color.menuBtn};
 font-weight: 500;
 font-size: 12px;
 line-height: 1.16;
+cursor: pointer;
     }
 }
 `,$=i.nav`
@@ -114,12 +116,13 @@ line-height: 1.16;
   }
 `,a=i.li`
   color: ${({theme:e})=>e.color.textchange};
+  transition: color ${({theme:e})=>e.transition.main};
 
   &:hover,
   &:focus {
     color: ${({theme:e})=>e.color.orange};
   }
-`,s=i(d)`
+`,s=i(l)`
   text-transform: uppercase;
   font-weight: 500;
   font-size: 14px;
@@ -198,4 +201,4 @@ line-height: 1.16;
     width: 11px;
     height: 11px;
   }
-`,O=()=>{const e=h(x),n=g(),[o,l]=r.useState(!0),p=()=>{n(m(e==="light"?"dark":"light")),l(!o)};return t.jsxs(N,{onClick:p,children:[e==="light"&&t.jsx(z,{children:t.jsx("use",{href:`${c}#icon-sun`})}),e==="dark"&&t.jsx(M,{children:t.jsx("use",{href:`${c}#icon-moon`})})]})},S=()=>{const[e,n]=r.useState(!1);return t.jsx("header",{children:t.jsxs(f,{children:[t.jsxs(v,{children:[t.jsxs(k,{to:"/",children:[t.jsx(j,{children:t.jsx("use",{href:T+"#logo"})}),t.jsx(y,{children:"Cinemania"})]}),t.jsx($,{className:e?"nav-active":"",children:t.jsxs(C,{children:[t.jsx(a,{children:t.jsx(s,{to:"/",onClick:()=>{n(!1)},children:"Home"})}),t.jsx(a,{children:t.jsx(s,{to:"/catalog",onClick:()=>{n(!1)},children:"Catalog"})}),t.jsx(a,{children:t.jsx(s,{to:"/mylibrary",onClick:()=>{n(!1)},children:"My library"})})]})}),t.jsx(w,{onClick:()=>{n(!e)},children:"Menu"}),t.jsx(O,{})]}),t.jsx(L,{className:e?"backdrop-open":"",onClick:o=>{o.target===o.currentTarget?n(!e):n(!0)}})]})})},B=()=>t.jsx(t.Fragment,{children:t.jsx("p",{children:"Footer"})}),X=()=>t.jsxs(t.Fragment,{children:[t.jsx(S,{}),t.jsx("main",{children:t.jsx(r.Suspense,{fallback:t.jsx(b,{}),children:t.jsx(u,{})})}),t.jsx(B,{})]});export{X as default};
+`,O=()=>{const e=h(x),n=g(),[o,d]=r.useState(!0),p=()=>{n(m(e==="light"?"dark":"light")),d(!o)};return t.jsxs(N,{onClick:p,children:[e==="light"&&t.jsx(z,{children:t.jsx("use",{href:`${c}#icon-sun`})}),e==="dark"&&t.jsx(M,{children:t.jsx("use",{href:`${c}#icon-moon`})})]})},S=()=>{const[e,n]=r.useState(!1);return t.jsx("header",{children:t.jsxs(f,{children:[t.jsxs(v,{children:[t.jsxs(k,{to:"/",children:[t.jsx(j,{children:t.jsx("use",{href:T+"#logo"})}),t.jsx(y,{children:"Cinemania"})]}),t.jsx($,{className:e?"nav-active":"",children:t.jsxs(C,{children:[t.jsx(a,{children:t.jsx(s,{to:"/",onClick:()=>{n(!1)},children:"Home"})}),t.jsx(a,{children:t.jsx(s,{to:"/catalog",onClick:()=>{n(!1)},children:"Catalog"})}),t.jsx(a,{children:t.jsx(s,{to:"/mylibrary",onClick:()=>{n(!1)},children:"My library"})})]})}),t.jsx(w,{onClick:()=>{n(!e)},children:"Menu"}),t.jsx(O,{})]}),t.jsx(L,{className:e?"backdrop-open":"",onClick:o=>{o.target===o.currentTarget?n(!e):n(!0)}})]})})},B=()=>t.jsx(t.Fragment,{children:t.jsx("p",{children:"Footer"})}),X=()=>t.jsxs(t.Fragment,{children:[t.jsx(S,{}),t.jsx("main",{children:t.jsx(r.Suspense,{fallback:t.jsx(b,{}),children:t.jsx(u,{})})}),t.jsx(B,{})]});export{X as default};

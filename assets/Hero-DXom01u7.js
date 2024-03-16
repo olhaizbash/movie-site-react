@@ -1,4 +1,4 @@
-import{u as t,j as i}from"./index-Db1PJ6rJ.js";import{C as n}from"./Container-CFeWB98h.js";const r="/movie-site-react/assets/hero_mob-D4bsknua.jpg",o="/movie-site-react/assets/hero_mob_2x-DVLF-0vp.jpg",a="/movie-site-react/assets/hero_tab-Bns2UM_L.jpg",d="/movie-site-react/assets/hero_tab_2x-r4FNr-wk.jpg",p="/movie-site-react/assets/hero-BM7XBHXv.jpg",s="/movie-site-react/assets/hero_2x-CuRl-OTU.jpg",x=t.section`
+import{u as t,j as i}from"./index-CowjYem8.js";import{C as n}from"./Container-BaXvtXEI.js";const r="/movie-site-react/assets/hero_mob-D4bsknua.jpg",o="/movie-site-react/assets/hero_mob_2x-DVLF-0vp.jpg",a="/movie-site-react/assets/hero_tab-Bns2UM_L.jpg",d="/movie-site-react/assets/hero_tab_2x-r4FNr-wk.jpg",p="/movie-site-react/assets/hero-BM7XBHXv.jpg",s="/movie-site-react/assets/hero_2x-CuRl-OTU.jpg",x=t.section`
   background-repeat: no-repeat;
   background-position: center;
   margin: 0 auto;
