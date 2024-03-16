@@ -43,6 +43,7 @@ export const Logo = styled.svg`
 export const LogoText = styled.span`
   display: none;
   color: ${({ theme }) => theme.color.logoText};
+  transition: color ${({ theme }) => theme.transition.main};
 
   @media (min-width: ${({ theme }) => theme.breakpoint.mobile}) {
     opacity: 0;
@@ -79,6 +80,7 @@ color:  ${({ theme }) => theme.color.menuBtn};
 font-weight: 500;
 font-size: 12px;
 line-height: 1.16;
+cursor: pointer;
     }
 }
 `;
@@ -131,6 +133,7 @@ export const NavList = styled.ul`
 
 export const NavListItem = styled.li`
   color: ${({ theme }) => theme.color.textchange};
+  transition: color ${({ theme }) => theme.transition.main};
 
   &:hover,
   &:focus {
