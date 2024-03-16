@@ -5,11 +5,12 @@ import {
   HeroParagraph,
   ButtonStart,
 } from "./Hero.styled";
+import { Container } from "../Container/Container";
 
 const Hero = () => {
   return (
     <SectionHero>
-      <div className="container">
+      <Container>
         <HeroTextWrapper>
           <HeroTitle>Let’s Make Your Own Cinema</HeroTitle>
           <HeroParagraph>
@@ -18,7 +19,7 @@ const Hero = () => {
           </HeroParagraph>
         </HeroTextWrapper>
         <ButtonStart>Get Started</ButtonStart>
-      </div>
+      </Container>
       <div></div>
     </SectionHero>
   );

@@ -12,6 +12,7 @@ import {
 
 import storage from "redux-persist/lib/storage";
 import { movieReducer } from "./reducer";
+import { optionsReducer } from "./themeSlice";
 
 const movieConfig = {
   key: "movie",
@@ -19,8 +20,14 @@ const movieConfig = {
   whitelist: ["favorite"],
 };
 
+const themeConfig = {
+  key: "options",
+  storage,
+};
+
 const rootReducer = combineReducers({
   movie: persistReducer(movieConfig, movieReducer),
+  options: persistReducer(themeConfig, optionsReducer),
 });
 export const store = configureStore({
   reducer: rootReducer,

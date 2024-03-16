@@ -26,22 +26,22 @@ export const SectionHero = styled.section`
     height: 380px;
   }
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: ${({ theme }) => theme.breakpoint.tablet}) {
     width: 768px;
     height: 432px;
     background: linear-gradient(83deg, #111 39.6%, rgba(17, 17, 17, 0) 72.95%),
-      url(${heroImgTab}) lightgray 92.376% 104.171% no-repeat;
+      url(${heroImgTab}) lightgray 99.376% 104.171% no-repeat;
 
     @media (min-device-pixel-ratio: 2),
       (-webkit-min-device-pixel-ratio: 2),
       (min-resolution: 192dpi),
       (min-resolution: 2dppx) {
       background: linear-gradient(83deg, #111 39.6%, rgba(17, 17, 17, 0) 72.95%),
-        url(${heroImgTab2x}) lightgray 58.002px -7.221px / 92.376% 104.171% no-repeat;
+        url(${heroImgTab2x}) lightgray 60.002px -7.221px / 92.376% 104.171% no-repeat;
     }
   }
 
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: ${({ theme }) => theme.breakpoint.desktop}) {
     width: 1280px;
     height: 720px;
     background: linear-gradient(83deg, #111 36.85%, rgba(17, 17, 17, 0) 60.05%),
@@ -56,14 +56,13 @@ export const SectionHero = styled.section`
           #111 36.85%,
           rgba(17, 17, 17, 0) 60.05%
         ),
-        url(${heroImgDesc2x}) lightgray 113.549px -4px / 91.116% 101.072% no-repeat;
+        url(${heroImgDesc2x}) lightgray 116.549px -4px / 91.116% 101.072% no-repeat;
     }
   }
 `;
 
 export const HeroTitle = styled.h1`
-  font-family: Roboto;
-  color: var(--White, #fff);
+  color: ${({ theme }) => theme.color.white};
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   -webkit-text-stroke-width: 1;
   -webkit-text-stroke-color: #000;
@@ -77,25 +76,22 @@ export const HeroTitle = styled.h1`
     width: 199px;
   }
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: ${({ theme }) => theme.breakpoint.tablet}) {
     font-size: 44px;
     width: 332px;
   }
 
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: ${({ theme }) => theme.breakpoint.desktop}) {
     font-size: 64px;
     width: 464px;
   }
 `;
 
 export const HeroParagraph = styled.p`
-  color: #f8f8f8;
-  font-family: Roboto;
-
+  color: ${({ theme }) => theme.color.white};
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-
   margin-bottom: 32px;
 
   @media screen and (max-width: 767px) {
@@ -103,12 +99,12 @@ export const HeroParagraph = styled.p`
     width: 166px;
   }
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: ${({ theme }) => theme.breakpoint.tablet}) {
     width: 357px;
     font-size: 14px;
   }
 
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: ${({ theme }) => theme.breakpoint.desktop}) {
     width: 464px;
     font-size: 16px;
   }
@@ -123,30 +119,32 @@ export const HeroTextWrapper = styled.div`
     padding-top: 40px;
   }
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: ${({ theme }) => theme.breakpoint.tablet}) {
     padding-top: 62px;
   }
 
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: ${({ theme }) => theme.breakpoint.desktop}) {
     padding-top: 169px;
     gap: 16px;
   }
 `;
 
 export const ButtonStart = styled.button`
-  color: var(--Background, #111);
+  color: ${({ theme }) => theme.color.lightBlack};
   text-align: center;
-  font-family: Roboto;
-  
   font-style: normal;
-  font-weight: 500;
+  font-weight: 600;
+  text-transform: uppercase;
   
   
   border-radius: 74px;
-  background: linear-gradient(141deg, #ffc226 9.4%, #f84119 91.91%); 
+  background: ${({ theme }) => theme.color.gradient}; 
+  transition: background ${({ theme }) => theme.transition.main};
   
-  &:hover{
-    background: linear-gradient(141deg, #f84119 9.4%, rgba(248, 159, 25, 0.68) 91.91%) ;}
+  &:hover,
+  &:focus{
+    background: ${({ theme }) => theme.color.gradientHover};
+  }
   );
 
   @media screen and (max-width: 767px) {
@@ -155,13 +153,13 @@ export const ButtonStart = styled.button`
     padding: 12px 24px;
   }
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: ${({ theme }) => theme.breakpoint.tablet}) {
     font-size: 14px;
     line-height: 20px;
     padding: 10px 24px;
   }
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: ${({ theme }) => theme.breakpoint.desktop}) {
     font-size: 16px;
     line-height: 24px;
     padding: 12px 24px;

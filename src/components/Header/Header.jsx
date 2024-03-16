@@ -9,20 +9,18 @@ import {
   NavListItem,
   NavListPath,
   Backdrop,
-  ThemeSwitcher,
-  IconMoon,
-  IconSun,
 } from "./Header.styled";
+import { Container } from "../Container/Container";
 import iconLogo from "../../../public/favicon.svg";
-import sprite from "../../images/sprite.svg";
 import { useState } from "react";
+import { ThemeSwitcher } from "../ThemeSwitcher/ThemeSwitcher";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <header>
-      <div className="container">
+      <Container>
         <HeaderContainer>
           <LogoContainer to="/">
             <Logo>
@@ -67,14 +65,7 @@ const Header = () => {
             }}>
             Menu
           </ButtonMenu>
-          <ThemeSwitcher>
-            <IconMoon>
-              <use href={`${sprite}#icon-moon`}></use>
-            </IconMoon>
-            <IconSun>
-              <use href={`${sprite}#icon-sun`}></use>
-            </IconSun>
-          </ThemeSwitcher>
+          <ThemeSwitcher />
         </HeaderContainer>
         <Backdrop
           className={isMenuOpen ? "backdrop-open" : ""}
@@ -83,7 +74,7 @@ const Header = () => {
               ? setIsMenuOpen(!isMenuOpen)
               : setIsMenuOpen(true);
           }}></Backdrop>
-      </div>
+      </Container>
     </header>
   );
 };

@@ -9,11 +9,11 @@ export const HeaderContainer = styled.div`
   padding-bottom: 8px;
   position: relative;
 
-  @media (min-width: 768px) {
+  @media (min-width: ${({ theme }) => theme.breakpoint.tablet}) {
     padding-top: 12px;
     padding-bottom: 12px;
   }
-  @media (min-width: 1280px) {
+  @media (min-width: ${({ theme }) => theme.breakpoint.desctop}) {
     padding-top: 6px;
     padding-bottom: 6px;
   }
@@ -28,12 +28,12 @@ export const Logo = styled.svg`
   width: 30px;
   height: 24px;
 
-  @media (min-width: 375px) {
+  @media (min-width: ${({ theme }) => theme.breakpoint.mobile}) {
     width: 32px;
     height: 32px;
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: ${({ theme }) => theme.breakpoint.tablet}) {
     margin-right: 8px;
     width: 48px;
     height: 48px;
@@ -42,15 +42,15 @@ export const Logo = styled.svg`
 
 export const LogoText = styled.span`
   display: none;
-  color: #282828;
+  color: ${({ theme }) => theme.color.logoText};
 
-  @media (min-width: 375px) {
+  @media (min-width: ${({ theme }) => theme.breakpoint.mobile}) {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: ${({ theme }) => theme.breakpoint.tablet}) {
     display: inline-block;
     font-weight: 400;
     font-size: 24px;
@@ -61,7 +61,7 @@ export const LogoText = styled.span`
 
     &:hover,
     &:focus {
-      color: #f87719;
+      color: ${({ theme }) => theme.color.orange};
     }
   }
 `;
@@ -75,7 +75,7 @@ outline: none;
 background-color: transparent;
 border: none;
 text-transform: uppercase;
-color: #595959;
+color:  ${({ theme }) => theme.color.menuBtn};
 font-weight: 500;
 font-size: 12px;
 line-height: 1.16;
@@ -95,7 +95,7 @@ export const Nav = styled.nav`
       visibility: visible;
       pointer-events: auto;
       display: block;
-      background-color: #fff;
+      background-color: ${({ theme }) => theme.color.pageBg};
       position: absolute;
       top: 48px;
       left: 0;
@@ -123,16 +123,18 @@ export const NavList = styled.ul`
     flex-direction: column;
     gap: 24px;
   }
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: ${({ theme }) => theme.breakpoint.tablet}) {
     display: flex;
     gap: 32px;
   }
 `;
 
 export const NavListItem = styled.li`
+  color: ${({ theme }) => theme.color.textchange};
+
   &:hover,
   &:focus {
-    color: #f87719;
+    color: ${({ theme }) => theme.color.orange};
   }
 `;
 
@@ -144,137 +146,22 @@ export const NavListPath = styled(NavLink)`
 `;
 
 export const Backdrop = styled.div`
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none; 
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 
-    @media screen and (max-width: 767px) {
-&.backdrop-open{
-background-color: rgb(0, 0, 0);
-opacity: 0.2;
-visibility: visible;
-pointer-events: auto;
-position: absolute;
-top: 42;
-left: 0;
-width: 100%;
-height: 100%;
-z-index: 2;
-}
-}
-}`;
-
-export const ThemeSwitcher = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  cursor: pointer;
-  width: 38px;
-  height: 16px;
-  background-color: #f87719;
-  background: linear-gradient(
-    141.22deg,
-    #f84119 9.4%,
-    rgba(248, 159, 25, 0.68) 91.91%
-  );
-  border-radius: 194px;
-  padding: 5px;
-  position: relative;
-
-  @media screen and (min-width: 768px) {
-    width: 54px;
-    height: 20px;
-    gap: 24px;
-  }
-
-  @media screen and (min-width: 1280px) {
-    width: 60px;
-    height: 24px;
-    gap: 24px;
-  }
-
-  &::before {
-    content: "";
-    border-radius: 50px;
-    background-color: #ffffff;
-    position: absolute;
-
-    z-index: 2;
-
-    width: 12px;
-    height: 12px;
-    transform: translateX(-3px);
-
-    @media screen and (min-width: 768px) {
-      top: 20%;
-      width: 16px;
-      height: 16px;
-      transform: translateX(-3px);
+  @media screen and (max-width: 767px) {
+    &.backdrop-open {
+      background-color: rgb(0, 0, 0);
+      opacity: 0.2;
+      visibility: visible;
+      pointer-events: auto;
+      position: absolute;
+      top: 42;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
     }
-
-    @media screen and (min-width: 1280px) {
-      width: 18px;
-      height: 18px;
-      transform: translateX(-2px);
-    }
-  }
-
-  &::after {
-    content: "";
-    position: absolute;
-    left: 40px;
-    z-index: 2;
-
-    border-width: 0 2px 0 0;
-    border-radius: 50px;
-    border-style: solid;
-    border-color: #f87719;
-    background-color: transparent;
-
-    width: 10px;
-    height: 10px;
-    transform: translateX(-3px) rotate(180deg);
-
-    @media screen and (min-width: 768px) {
-      width: 14px;
-      height: 14px;
-      top: 19%;
-      transform: translateX(-3px) rotate(180deg);
-    }
-
-    @media screen and (min-width: 1280px) {
-      top: 19%;
-      width: 15px;
-      height: 15px;
-      transform: translateX(-2px) rotate(180deg);
-    }
-  }
-`;
-
-export const IconMoon = styled.svg`
-  width: 8px;
-  height: 8px;
-
-  @media screen and (min-width: 768px) {
-    width: 11px;
-    height: 11px;
-  }
-  @media screen and (min-width: 1280px) {
-    width: 13px;
-    height: 13px;
-  }
-`;
-
-export const IconSun = styled.svg`
-  width: 8px;
-  height: 8px;
-
-  @media screen and (min-width: 768px) {
-    width: 11px;
-    height: 11px;
-  }
-  @media screen and (min-width: 1280px) {
-    width: 13px;
-    height: 13px;
   }
 `;
