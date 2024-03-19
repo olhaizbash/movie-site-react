@@ -1,4 +1,4 @@
-import{u as i,N as l,a as h,s as x,b as g,r,j as t,c as m,L as b,O as u}from"./index-CowjYem8.js";import{C as f}from"./Container-BaXvtXEI.js";const v=i.div`
+import{u as i,N as l,a as h,s as x,b as g,r,j as t,c as m,L as u,O as b}from"./index-fs0GxMrF.js";import{C as f}from"./Container-Cjguw5RV.js";const v=i.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -147,6 +147,7 @@ cursor: pointer;
     }
   }
 `,T="/movie-site-react/assets/favicon-V8-NnNKM.svg",c="/movie-site-react/assets/sprite-9YzRhiOm.svg",N=i.div`
+  cursor: pointer;
   width: 44px;
   height: 18px;
   border-radius: 194px;
@@ -201,4 +202,4 @@ cursor: pointer;
     width: 11px;
     height: 11px;
   }
-`,O=()=>{const e=h(x),n=g(),[o,d]=r.useState(!0),p=()=>{n(m(e==="light"?"dark":"light")),d(!o)};return t.jsxs(N,{onClick:p,children:[e==="light"&&t.jsx(z,{children:t.jsx("use",{href:`${c}#icon-sun`})}),e==="dark"&&t.jsx(M,{children:t.jsx("use",{href:`${c}#icon-moon`})})]})},S=()=>{const[e,n]=r.useState(!1);return t.jsx("header",{children:t.jsxs(f,{children:[t.jsxs(v,{children:[t.jsxs(k,{to:"/",children:[t.jsx(j,{children:t.jsx("use",{href:T+"#logo"})}),t.jsx(y,{children:"Cinemania"})]}),t.jsx($,{className:e?"nav-active":"",children:t.jsxs(C,{children:[t.jsx(a,{children:t.jsx(s,{to:"/",onClick:()=>{n(!1)},children:"Home"})}),t.jsx(a,{children:t.jsx(s,{to:"/catalog",onClick:()=>{n(!1)},children:"Catalog"})}),t.jsx(a,{children:t.jsx(s,{to:"/mylibrary",onClick:()=>{n(!1)},children:"My library"})})]})}),t.jsx(w,{onClick:()=>{n(!e)},children:"Menu"}),t.jsx(O,{})]}),t.jsx(L,{className:e?"backdrop-open":"",onClick:o=>{o.target===o.currentTarget?n(!e):n(!0)}})]})})},B=()=>t.jsx(t.Fragment,{children:t.jsx("p",{children:"Footer"})}),X=()=>t.jsxs(t.Fragment,{children:[t.jsx(S,{}),t.jsx("main",{children:t.jsx(r.Suspense,{fallback:t.jsx(b,{}),children:t.jsx(u,{})})}),t.jsx(B,{})]});export{X as default};
+`,O=()=>{const e=h(x),n=g(),[o,d]=r.useState(!0),p=()=>{n(m(e==="light"?"dark":"light")),d(!o)};return t.jsxs(N,{onClick:p,children:[e==="light"&&t.jsx(z,{children:t.jsx("use",{href:`${c}#icon-sun`})}),e==="dark"&&t.jsx(M,{children:t.jsx("use",{href:`${c}#icon-moon`})})]})},S=()=>{const[e,n]=r.useState(!1);return t.jsx("header",{children:t.jsxs(f,{children:[t.jsxs(v,{children:[t.jsxs(k,{to:"/",children:[t.jsx(j,{children:t.jsx("use",{href:T+"#logo"})}),t.jsx(y,{children:"Cinemania"})]}),t.jsx($,{className:e?"nav-active":"",children:t.jsxs(C,{children:[t.jsx(a,{children:t.jsx(s,{to:"/",onClick:()=>{n(!1)},children:"Home"})}),t.jsx(a,{children:t.jsx(s,{to:"/catalog",onClick:()=>{n(!1)},children:"Catalog"})}),t.jsx(a,{children:t.jsx(s,{to:"/mylibrary",onClick:()=>{n(!1)},children:"My library"})})]})}),t.jsx(w,{onClick:()=>{n(!e)},children:"Menu"}),t.jsx(O,{})]}),t.jsx(L,{className:e?"backdrop-open":"",onClick:o=>{o.target===o.currentTarget?n(!e):n(!0)}})]})})},B=()=>t.jsx(t.Fragment,{children:t.jsx("p",{children:"Footer"})}),X=()=>t.jsxs(t.Fragment,{children:[t.jsx(S,{}),t.jsx("main",{children:t.jsx(r.Suspense,{fallback:t.jsx(u,{}),children:t.jsx(b,{})})}),t.jsx(B,{})]});export{X as default};

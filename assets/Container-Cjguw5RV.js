@@ -1,4 +1,4 @@
-import{u as t}from"./index-CowjYem8.js";const a=t.div`
+import{u as t}from"./index-fs0GxMrF.js";const a=t.div`
   width: 100%;
   padding-left: 20px;
   padding-right: 20px;
