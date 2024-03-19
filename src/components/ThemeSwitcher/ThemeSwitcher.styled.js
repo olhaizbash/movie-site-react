@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const ToggleContainer = styled.div`
+  cursor: pointer;
   width: 44px;
   height: 18px;
   border-radius: 194px;

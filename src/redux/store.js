@@ -17,7 +17,7 @@ import { optionsReducer } from "./themeSlice";
 const movieConfig = {
   key: "movie",
   storage,
-  whitelist: ["favorite"],
+  whitelist: ["favorites"],
 };
 
 const themeConfig = {

@@ -61,6 +61,39 @@ export const SectionHero = styled.section`
   }
 `;
 
+export const Background = styled.div`
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 0 auto;
+  background-size: cover;
+background: linear-gradient(86deg, #111 33.63%, rgba(17, 17, 17, 0.00) 76.86%), url(https://image.tmdb.org/t/p/w400${(
+  props
+) => props.$imgUrl}) transparent -56.778px 0px / 200% 100% no-repeat;
+
+
+  @media screen and (max-width: 767px) {
+    width: 320px;
+    height: 380px;
+  }
+
+  @media screen and (min-width: ${({ theme }) => theme.breakpoint.tablet}) {
+    width: 768px;
+    height: 432px;
+    background: linear-gradient(83deg, #111 39.6%, rgba(17, 17, 17, 0) 72.95%),
+      url(https://image.tmdb.org/t/p/w780${(props) =>
+        props.$imgUrl}) transparent 99.376% 104.171% no-repeat;
+  }
+
+  @media screen and (min-width: ${({ theme }) => theme.breakpoint.desktop}) {
+    width: 1280px;
+    height: 720px;
+    background: linear-gradient(83deg, #111 36.85%, rgba(17, 17, 17, 0) 60.05%),
+      url(https://image.tmdb.org/t/p/w1280${(props) =>
+        props.$imgUrl}) transparent  91.116% 101.072% no-repeat;
+    }
+  }
+`;
+
 export const HeroTitle = styled.h1`
   color: ${({ theme }) => theme.color.white};
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -74,16 +107,19 @@ export const HeroTitle = styled.h1`
   @media screen and (max-width: 767px) {
     font-size: 32px;
     width: 199px;
+    height: 114px;
   }
 
   @media screen and (min-width: ${({ theme }) => theme.breakpoint.tablet}) {
     font-size: 44px;
     width: 332px;
+    height: 104px;
   }
 
   @media screen and (min-width: ${({ theme }) => theme.breakpoint.desktop}) {
     font-size: 64px;
     width: 464px;
+    height: 150px;
   }
 `;
 
@@ -93,20 +129,26 @@ export const HeroParagraph = styled.p`
   font-weight: 400;
   line-height: normal;
   margin-bottom: 32px;
+  text-overflow: ellipsis;
+  overflow-y: auto;
+  overflow-x: hidden;
 
   @media screen and (max-width: 767px) {
     font-size: 14px;
     width: 166px;
+    height: 80px;
   }
 
   @media screen and (min-width: ${({ theme }) => theme.breakpoint.tablet}) {
     width: 357px;
     font-size: 14px;
+    height: 65px;
   }
 
   @media screen and (min-width: ${({ theme }) => theme.breakpoint.desktop}) {
     width: 464px;
     font-size: 16px;
+    height: 76px;
   }
 `;
 
@@ -129,12 +171,16 @@ export const HeroTextWrapper = styled.div`
   }
 `;
 
+export const ButtonWrapper = styled.div`
+  display: flex;
+  gap: 8px;
+`;
+
 export const ButtonStart = styled.button`
   color: ${({ theme }) => theme.color.lightBlack};
   text-align: center;
   font-style: normal;
-  font-weight: 600;
-  text-transform: uppercase;
+  font-weight: 500;
   
   
   border-radius: 74px;
