@@ -66,9 +66,9 @@ export const Background = styled.div`
   background-position: center;
   margin: 0 auto;
   background-size: cover;
-background: linear-gradient(86deg, #111 33.63%, rgba(17, 17, 17, 0.00) 76.86%), url(https://image.tmdb.org/t/p/w400${(
+background: linear-gradient(86deg, #111 33.63%, rgba(17, 17, 17, 0.00) 76.86%), url(https://image.tmdb.org/t/p/w500${(
   props
-) => props.$imgUrl}) transparent -56.778px 0px / 200% 100% no-repeat;
+) => props.$imgUrl}) transparent -56.778px 0px / 150% 100% no-repeat;
 
 
   @media screen and (max-width: 767px) {
@@ -123,6 +123,11 @@ export const HeroTitle = styled.h1`
   }
 `;
 
+export const StartsRate = styled.div``;
+export const InputRate = styled.input`
+  display: none;
+`;
+
 export const HeroParagraph = styled.p`
   color: ${({ theme }) => theme.color.white};
   font-style: normal;
@@ -142,13 +147,13 @@ export const HeroParagraph = styled.p`
   @media screen and (min-width: ${({ theme }) => theme.breakpoint.tablet}) {
     width: 357px;
     font-size: 14px;
-    height: 65px;
+    height: 150px;
   }
 
   @media screen and (min-width: ${({ theme }) => theme.breakpoint.desktop}) {
     width: 464px;
     font-size: 16px;
-    height: 76px;
+    height: 150px;
   }
 `;
 

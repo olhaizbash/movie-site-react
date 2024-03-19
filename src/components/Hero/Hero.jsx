@@ -4,8 +4,6 @@ import {
   HeroTitle,
   HeroParagraph,
   ButtonStart,
-  Background,
-  ButtonWrapper,
 } from "./Hero.styled";
 import { NavLink } from "react-router-dom";
 import { Container } from "../Container/Container";
@@ -13,6 +11,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getTrend } from "../../redux/movieThunk";
 import { selectTrends } from "../../redux/selectors";
+import TrendsComponent from "./TrendsComponent";
 
 const Hero = () => {
   const dispatch = useDispatch();
@@ -28,7 +27,7 @@ const Hero = () => {
       currentMovie === 19
         ? setCurrentMovie(0)
         : setCurrentMovie(currentMovie + 1);
-    }, 15000);
+    }, 10000);
 
     return () => clearTimeout(timer);
   }, [currentMovie]);
@@ -36,20 +35,7 @@ const Hero = () => {
   return (
     <SectionHero>
       {trends !== null && trends?.length > 0 ? (
-        <>
-          <Background $imgUrl={trends[currentMovie].backdrop_path}>
-            <Container>
-              <HeroTextWrapper>
-                <HeroTitle>{trends[currentMovie].title}</HeroTitle>
-                <HeroParagraph>{trends[currentMovie].overview}</HeroParagraph>
-              </HeroTextWrapper>
-              <ButtonWrapper>
-                <ButtonStart>Watch trailer</ButtonStart>
-                <ButtonStart>More details</ButtonStart>
-              </ButtonWrapper>
-            </Container>
-          </Background>
-        </>
+        <TrendsComponent trends={trends[currentMovie]}></TrendsComponent>
       ) : (
         <>
           <Container>
