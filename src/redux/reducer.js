@@ -1,11 +1,12 @@
 import { createSlice, isAnyOf } from "@reduxjs/toolkit";
-import { getTrend } from "./movieThunk";
+import { getTrailer, getTrend } from "./movieThunk";
 
 const initialState = {
   trendMovies: null,
   isLoading: false,
   favorites: [],
   page: null,
+  trailer: null,
 };
 
 const movieSlice = createSlice({
@@ -15,10 +16,13 @@ const movieSlice = createSlice({
     builder
       .addCase(getTrend.fulfilled, (state, { payload }) => {
         state.isLoading = false;
-        console.log(payload);
         state.trendMovies = payload.results;
-        console.log(state.trendMovies);
         state.page = payload.page;
+      })
+      .addCase(getTrailer.fulfilled, (state, { payload }) => {
+        state.isLoading = false;
+        console.log(payload);
+        state.trailer = payload;
       })
       .addMatcher(isAnyOf(getTrend.pending), (state) => {
         state.isLoading = true;

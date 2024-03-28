@@ -33,7 +33,7 @@ export const getUpcoming = async () => {
 
 export const getMovieTrailer = async (movieId) => {
   const { data } = await instance.get(`movie/${movieId}/videos`);
-  return data;
+  return data.results[1].key;
 };
 
 export const getGenresList = async () => {

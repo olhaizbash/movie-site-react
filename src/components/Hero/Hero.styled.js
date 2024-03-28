@@ -216,3 +216,44 @@ export const ButtonStart = styled.button`
     padding: 12px 24px;
   }
 `;
+
+export const Overlay = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  position: fixed;
+  padding: 0;
+  margin: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 1200;
+`;
+export const ModalContent = styled.div`
+  translate: -50% -50%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 280px;
+  max-height: 90vh;
+  background: var(--primery-color-white);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: auto;
+  z-index: 1200;
+
+  @media screen and (min-width: 768px) {
+    min-width: 592px;
+  }
+`;
+
+export const Video = styled.iframe`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+`;

@@ -13,7 +13,6 @@ const Theme = ({ children }) => {
 
   useEffect(() => {
     setThemeState(currentTheme === "light" ? lightTheme : darkTheme);
-    console.log(currentTheme);
   }, [currentTheme, darkTheme, lightTheme]);
 
   return <ThemeProvider theme={themeState}>{children}</ThemeProvider>;

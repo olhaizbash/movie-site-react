@@ -17,17 +17,20 @@ const Hero = () => {
   const dispatch = useDispatch();
   const trends = useSelector(selectTrends);
   const [currentMovie, setCurrentMovie] = useState(0);
+  const [timer, setTimer] = useState(null);
 
   useEffect(() => {
     dispatch(getTrend());
   }, [dispatch]);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
+    const time = setTimeout(() => {
       currentMovie === 19
         ? setCurrentMovie(0)
         : setCurrentMovie(currentMovie + 1);
     }, 10000);
+
+    setTimer(time);
 
     return () => clearTimeout(timer);
   }, [currentMovie]);
@@ -35,7 +38,9 @@ const Hero = () => {
   return (
     <SectionHero>
       {trends !== null && trends?.length > 0 ? (
-        <TrendsComponent trends={trends[currentMovie]}></TrendsComponent>
+        <TrendsComponent
+          trends={trends[currentMovie]}
+          timer={timer}></TrendsComponent>
       ) : (
         <>
           <Container>
