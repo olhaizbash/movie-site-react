@@ -2,7 +2,8 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { selectTrailer } from "../../redux/selectors";
 import { getTrailer } from "../../redux/movieThunk";
-import { Overlay, ModalContent, Video } from "./Hero.styled";
+import { Overlay, ModalContent } from "./Hero.styled";
+import ReactPlayer from "react-player/youtube";
 
 const MovieTrailerModal = ({ onClose, movieId }) => {
   const trailer = useSelector(selectTrailer);
@@ -31,7 +32,7 @@ const MovieTrailerModal = ({ onClose, movieId }) => {
     <>
       <Overlay onClick={onClose} />
       <ModalContent>
-        <Video src={videoUrl} allowFullScreen={true}></Video>
+        <ReactPlayer url={videoUrl} controls></ReactPlayer>
       </ModalContent>
     </>
   );

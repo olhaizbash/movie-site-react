@@ -238,22 +238,15 @@ export const ModalContent = styled.div`
   top: 50%;
   left: 50%;
   min-width: 280px;
-  max-height: 90vh;
+  max-height: 100%;
   background: var(--primery-color-white);
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: auto;
   z-index: 1200;
+  overflow: visible;
 
   @media screen and (min-width: 768px) {
     min-width: 592px;
   }
-`;
-
-export const Video = styled.iframe`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
 `;
