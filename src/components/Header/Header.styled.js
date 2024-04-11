@@ -98,22 +98,23 @@ export const Nav = styled.nav`
       pointer-events: auto;
       display: block;
       background-color: ${({ theme }) => theme.color.pageBg};
-      position: absolute;
+      position: fixed;
       top: 48px;
       left: 0;
       padding: 20px;
       height: 428px;
       border-radius: 0px 0px 8px 0px;
       z-index: 100;
-      width: 204px;
+      width: 100%;
+      // height: 100%
       transform: translate(0);
       transition: transform 0.25s ease-in-out;
     }
   }
 
-  @media screen and (max-width: 373px) {
+  @media screen and (max-width: 320px) {
     &.nav-active {
-      top: 42px;
+      top: 39px;
     }
   }
 `;
@@ -123,6 +124,8 @@ export const NavList = styled.ul`
   @media screen and (max-width: 767px) {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     gap: 24px;
   }
   @media screen and (min-width: ${({ theme }) => theme.breakpoint.tablet}) {
@@ -134,6 +137,7 @@ export const NavList = styled.ul`
 export const NavListItem = styled.li`
   color: ${({ theme }) => theme.color.textchange};
   transition: color ${({ theme }) => theme.transition.main};
+  position: relative;
 
   &:hover,
   &:focus {
@@ -146,6 +150,18 @@ export const NavListPath = styled(NavLink)`
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
+
+  &:hover {
+    &:after {
+      content: "";
+      position: absolute;
+      width: 30%;
+      height: 2px;
+      background: ${({ theme }) => theme.color.orange};
+      bottom: -4px;
+      left: 0px;
+    }
+  }
 `;
 
 export const Backdrop = styled.div`

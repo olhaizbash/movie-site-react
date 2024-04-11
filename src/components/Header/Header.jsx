@@ -12,11 +12,17 @@ import {
 } from "./Header.styled";
 import { Container } from "../Container/Container";
 import iconLogo from "../../../public/favicon.svg";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ThemeSwitcher } from "../ThemeSwitcher/ThemeSwitcher";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  useEffect(() => {
+    isMenuOpen
+      ? (document.body.style.overflow = "hidden")
+      : (document.body.style.overflow = "visible");
+  }, [isMenuOpen]);
 
   return (
     <header>

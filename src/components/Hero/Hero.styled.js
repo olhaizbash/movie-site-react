@@ -229,7 +229,8 @@ export const Overlay = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.8);
+  background-color: rgb(0, 0, 0);
+  opacity: 0.2;
   z-index: 1200;
 `;
 export const ModalContent = styled.div`

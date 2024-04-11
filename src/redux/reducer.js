@@ -1,5 +1,5 @@
 import { createSlice, isAnyOf } from "@reduxjs/toolkit";
-import { getTrailer, getTrend } from "./movieThunk";
+import { getDetails, getTrailer, getTrend } from "./movieThunk";
 
 const initialState = {
   trendMovies: null,
@@ -7,6 +7,7 @@ const initialState = {
   favorites: [],
   page: null,
   trailer: null,
+  currentMovie: [],
 };
 
 const movieSlice = createSlice({
@@ -23,6 +24,10 @@ const movieSlice = createSlice({
         state.isLoading = false;
         console.log(payload);
         state.trailer = payload;
+      })
+      .addCase(getDetails.fulfilled, (state, { payload }) => {
+        state.isLoading = false;
+        state.currentMovie = payload;
       })
       .addMatcher(isAnyOf(getTrend.pending), (state) => {
         state.isLoading = true;
