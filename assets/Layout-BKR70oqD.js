@@ -1,4 +1,4 @@
-import{u as i,N as l,a as h,s as x,b as g,r,j as t,c as m,L as u,O as b}from"./index-DyG1v5LR.js";import{C as f}from"./Container-CkU0VT3E.js";const v=i.div`
+import{u as i,N as l,a as h,s as x,b as g,r as a,j as t,c as m,L as u,O as b}from"./index-BzHBv6G6.js";import{C as f}from"./Container-gJAiY76n.js";const v=i.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -14,10 +14,10 @@ import{u as i,N as l,a as h,s as x,b as g,r,j as t,c as m,L as u,O as b}from"./i
     padding-top: 6px;
     padding-bottom: 6px;
   }
-`,k=i(l)`
+`,y=i(l)`
   display: flex;
   align-items: center;
-`,j=i.svg`
+`,k=i.svg`
   width: 30px;
   height: 24px;
 
@@ -31,7 +31,7 @@ import{u as i,N as l,a as h,s as x,b as g,r,j as t,c as m,L as u,O as b}from"./i
     width: 48px;
     height: 48px;
   }
-`,y=i.span`
+`,j=i.span`
   display: none;
   color: ${({theme:e})=>e.color.logoText};
   transition: color ${({theme:e})=>e.transition.main};
@@ -85,22 +85,23 @@ cursor: pointer;
       pointer-events: auto;
       display: block;
       background-color: ${({theme:e})=>e.color.pageBg};
-      position: absolute;
+      position: fixed;
       top: 48px;
       left: 0;
       padding: 20px;
       height: 428px;
       border-radius: 0px 0px 8px 0px;
       z-index: 100;
-      width: 204px;
+      width: 100%;
+      // height: 100%
       transform: translate(0);
       transition: transform 0.25s ease-in-out;
     }
   }
 
-  @media screen and (max-width: 373px) {
+  @media screen and (max-width: 320px) {
     &.nav-active {
-      top: 42px;
+      top: 39px;
     }
   }
 `,C=i.ul`
@@ -108,15 +109,18 @@ cursor: pointer;
   @media screen and (max-width: 767px) {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     gap: 24px;
   }
   @media screen and (min-width: ${({theme:e})=>e.breakpoint.tablet}) {
     display: flex;
     gap: 32px;
   }
-`,a=i.li`
+`,r=i.li`
   color: ${({theme:e})=>e.color.textchange};
   transition: color ${({theme:e})=>e.transition.main};
+  position: relative;
 
   &:hover,
   &:focus {
@@ -127,6 +131,18 @@ cursor: pointer;
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
+
+  &:hover {
+    &:after {
+      content: "";
+      position: absolute;
+      width: 30%;
+      height: 2px;
+      background: ${({theme:e})=>e.color.orange};
+      bottom: -4px;
+      left: 0px;
+    }
+  }
 `,L=i.div`
   opacity: 0;
   visibility: hidden;
@@ -202,4 +218,4 @@ cursor: pointer;
     width: 11px;
     height: 11px;
   }
-`,O=()=>{const e=h(x),n=g(),[o,d]=r.useState(!0),p=()=>{n(m(e==="light"?"dark":"light")),d(!o)};return t.jsxs(N,{onClick:p,children:[e==="light"&&t.jsx(z,{children:t.jsx("use",{href:`${c}#icon-sun`})}),e==="dark"&&t.jsx(M,{children:t.jsx("use",{href:`${c}#icon-moon`})})]})},S=()=>{const[e,n]=r.useState(!1);return t.jsx("header",{children:t.jsxs(f,{children:[t.jsxs(v,{children:[t.jsxs(k,{to:"/",children:[t.jsx(j,{children:t.jsx("use",{href:T+"#logo"})}),t.jsx(y,{children:"Cinemania"})]}),t.jsx($,{className:e?"nav-active":"",children:t.jsxs(C,{children:[t.jsx(a,{children:t.jsx(s,{to:"/",onClick:()=>{n(!1)},children:"Home"})}),t.jsx(a,{children:t.jsx(s,{to:"/catalog",onClick:()=>{n(!1)},children:"Catalog"})}),t.jsx(a,{children:t.jsx(s,{to:"/mylibrary",onClick:()=>{n(!1)},children:"My library"})})]})}),t.jsx(w,{onClick:()=>{n(!e)},children:"Menu"}),t.jsx(O,{})]}),t.jsx(L,{className:e?"backdrop-open":"",onClick:o=>{o.target===o.currentTarget?n(!e):n(!0)}})]})})},B=()=>t.jsx(t.Fragment,{children:t.jsx("p",{children:"Footer"})}),X=()=>t.jsxs(t.Fragment,{children:[t.jsx(S,{}),t.jsx("main",{children:t.jsx(r.Suspense,{fallback:t.jsx(u,{}),children:t.jsx(b,{})})}),t.jsx(B,{})]});export{X as default};
+`,O=()=>{const e=h(x),n=g(),[o,d]=a.useState(!0),p=()=>{n(m(e==="light"?"dark":"light")),d(!o)};return t.jsxs(N,{onClick:p,children:[e==="light"&&t.jsx(z,{children:t.jsx("use",{href:`${c}#icon-sun`})}),e==="dark"&&t.jsx(M,{children:t.jsx("use",{href:`${c}#icon-moon`})})]})},S=()=>{const[e,n]=a.useState(!1);return a.useEffect(()=>{e?document.body.style.overflow="hidden":document.body.style.overflow="visible"},[e]),t.jsx("header",{children:t.jsxs(f,{children:[t.jsxs(v,{children:[t.jsxs(y,{to:"/",children:[t.jsx(k,{children:t.jsx("use",{href:T+"#logo"})}),t.jsx(j,{children:"Cinemania"})]}),t.jsx($,{className:e?"nav-active":"",children:t.jsxs(C,{children:[t.jsx(r,{children:t.jsx(s,{to:"/",onClick:()=>{n(!1)},children:"Home"})}),t.jsx(r,{children:t.jsx(s,{to:"/catalog",onClick:()=>{n(!1)},children:"Catalog"})}),t.jsx(r,{children:t.jsx(s,{to:"/mylibrary",onClick:()=>{n(!1)},children:"My library"})})]})}),t.jsx(w,{onClick:()=>{n(!e)},children:"Menu"}),t.jsx(O,{})]}),t.jsx(L,{className:e?"backdrop-open":"",onClick:o=>{o.target===o.currentTarget?n(!e):n(!0)}})]})})},B=()=>t.jsx(t.Fragment,{children:t.jsx("p",{children:"Footer"})}),X=()=>t.jsxs(t.Fragment,{children:[t.jsx(S,{}),t.jsx("main",{children:t.jsx(a.Suspense,{fallback:t.jsx(u,{}),children:t.jsx(b,{})})}),t.jsx(B,{})]});export{X as default};
