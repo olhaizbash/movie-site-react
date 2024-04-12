@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { selectTrailer } from "../../redux/selectors";
 import { getTrailer } from "../../redux/movieThunk";
-import { Overlay, ModalContent } from "./Hero.styled";
+import { Overlay, ModalContentTrailer } from "./Hero.styled";
 import ReactPlayer from "react-player/youtube";
 
 const MovieTrailerModal = ({ onClose, movieId }) => {
@@ -31,9 +31,9 @@ const MovieTrailerModal = ({ onClose, movieId }) => {
   return (
     <>
       <Overlay onClick={onClose} />
-      <ModalContent>
+      <ModalContentTrailer>
         <ReactPlayer url={videoUrl} controls></ReactPlayer>
-      </ModalContent>
+      </ModalContentTrailer>
     </>
   );
 };

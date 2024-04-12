@@ -235,6 +235,30 @@ export const Overlay = styled.div`
 `;
 export const ModalContent = styled.div`
   translate: -50% -50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1200;
+  overflow: visible;
+  padding: 52px 16px 52px 16px;
+  min-width: 280px;
+  border-radius: 16px;
+  background: ${({ theme }) => theme.color.pageBg};
+  box-shadow: ${({ theme }) => theme.modalBoxShadow.modal};
+
+  @media screen and (min-width: ${({ theme }) => theme.breakpoint.tablet}) {
+    width: 704px;
+    height: 488px;
+  }
+
+  @media screen and (min-width: ${({ theme }) => theme.breakpoint.desktop}) {
+    width: 704px;
+    height: 588px;
+  }
+`;
+
+export const ModalContentTrailer = styled.div`
+  translate: -50% -50%;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -249,5 +273,169 @@ export const ModalContent = styled.div`
 
   @media screen and (min-width: 768px) {
     min-width: 592px;
+  }
+`;
+
+export const ModalDetailsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+
+  @media screen and (min-width: ${({ theme }) => theme.breakpoint.tablet}) {
+    flex-direction: row;
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
+  }
+`;
+
+export const CloseBtn = styled.button`
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background-color: transparent;
+  cursor: pointer;
+`;
+
+export const CloseIcon = styled.svg`
+  width: 100%;
+  height: 100%;
+  stroke: ${({ theme }) => theme.color.logoText};
+  transition: stroke ${({ theme }) => theme.transition.main};
+
+  &:hover,
+  &:focus {
+    stroke: ${({ theme }) => theme.color.orange};
+  }
+`;
+
+export const ModalPoster = styled.img`
+  border-radius: 5px;
+  display: block;
+  width: 248px;
+  height: 315px;
+  margin: 0 auto;
+  box-shadow: ${({ theme }) => theme.modalBoxShadow.modal};
+
+  @media screen and (min-width: ${({ theme }) => theme.breakpoint.tablet}) {
+    width: 294px;
+    height: 400px;
+  }
+
+  @media screen and (min-width: ${({ theme }) => theme.breakpoint.desktop}) {
+    width: 375px;
+    height: 478px;
+  }
+`;
+
+export const TitleMovie = styled.h1`
+color: ${({ theme }) => theme.color.textchange};
+font-family: Roboto;
+font-size: 20px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+margin: 0;
+margin-bottom: 29px;
+  }
+
+  @media screen and (min-width: ${({ theme }) => theme.breakpoint.tablet}) {
+    font-size: 24px;
+    margin-bottom: 24px;
+  }
+
+  @media screen and (min-width: ${({ theme }) => theme.breakpoint.desktop}) {
+    line-height: 32px;
+    margin-bottom: 28px;
+  }
+`;
+
+export const AboutMovieContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+
+  @media screen and (min-width: ${({ theme }) => theme.breakpoint.tablet}) {
+    margin-bottom: 15px;
+  }
+
+  @media screen and (min-width: ${({ theme }) => theme.breakpoint.desktop}) {
+    margin-bottom: 13.5px;
+  }
+`;
+
+export const SubTitleMovie = styled.h2`
+  color: ${({ theme }) => theme.color.textchange};
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 16px;
+  margin: 0;
+
+  @media screen and (min-width: ${({ theme }) => theme.breakpoint.tablet}) {
+    line-height: normal;
+  }
+
+  @media screen and (min-width: ${({ theme }) => theme.breakpoint.desktop}) {
+    font-size: 16px;
+  }
+`;
+
+export const SubTitleMovieDesc = styled.p`
+  color: ${({ theme }) => theme.color.textchange};
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: uppercase;
+  text-align: end;
+  margin: 0;
+
+  @media screen and (min-width: ${({ theme }) => theme.breakpoint.desktop}) {
+    font-size: 16px;
+  }
+`;
+
+export const MovieDesc = styled.p`
+  color: ${({ theme }) => theme.color.textchange};
+  font-family: Roboto;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  margin: 0;
+`;
+
+export const AddLibraryButton = styled.button`
+  border-radius: 74px;
+  border: 1px solid var(--linear, #ffc226);
+  background: transparent;
+  padding: 12px 24px;
+  text-align: center;
+  font-family: Roboto;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  color: ${({ theme }) => theme.color.textchange};
+  cursor: pointer;
+  margin-top: 16px;
+  transition: background ${({ theme }) => theme.transition.main};
+
+  &:hover,
+  &:focus {
+    background: ${({ theme }) => theme.color.gradientHover};
+  }
+
+  @media screen and (min-width: ${({ theme }) => theme.breakpoint.tablet}) {
+    line-height: 16px;
+    margin-top: 24px;
   }
 `;
