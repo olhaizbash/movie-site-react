@@ -12,15 +12,23 @@ import {
   MovieDesc,
   AddLibraryButton,
 } from "./Hero.styled";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getDetails } from "../../redux/movieThunk";
-import { selectCurrentMovie } from "../../redux/selectors";
+import { selectCurrentMovie, selectFavorites } from "../../redux/selectors";
 import closeSvg from "../../images/sprite.svg";
+import { addToFavorite, removeFromFavorite } from "../../redux/reducer";
 
 const MovieDetailsModal = ({ onClose, movieId }) => {
   const dispatch = useDispatch();
   const currentMovie = useSelector(selectCurrentMovie);
+  const favorites = useSelector(selectFavorites);
+  const [inList, setInList] = useState(false);
+
+  useEffect(() => {
+    const exist = favorites.findIndex((el) => el.id === currentMovie.id);
+    exist >= 0 ? setInList(true) : setInList(false);
+  }, [favorites, currentMovie]);
 
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -77,7 +85,21 @@ const MovieDetailsModal = ({ onClose, movieId }) => {
               <SubTitleMovie>ABOUT</SubTitleMovie>
               <MovieDesc>{currentMovie.overview}</MovieDesc>
             </div>
-            <AddLibraryButton>Add to my library</AddLibraryButton>
+            {inList ? (
+              <AddLibraryButton
+                onClick={() => {
+                  dispatch(removeFromFavorite(currentMovie));
+                }}>
+                Remove from my library
+              </AddLibraryButton>
+            ) : (
+              <AddLibraryButton
+                onClick={() => {
+                  dispatch(addToFavorite(currentMovie));
+                }}>
+                Add to my library
+              </AddLibraryButton>
+            )}
           </div>
         </ModalDetailsContainer>
       </ModalContent>

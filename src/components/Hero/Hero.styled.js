@@ -232,6 +232,8 @@ export const Overlay = styled.div`
   background-color: rgb(0, 0, 0);
   opacity: 0.2;
   z-index: 1200;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 `;
 export const ModalContent = styled.div`
   translate: -50% -50%;
@@ -245,6 +247,7 @@ export const ModalContent = styled.div`
   border-radius: 16px;
   background: ${({ theme }) => theme.color.pageBg};
   box-shadow: ${({ theme }) => theme.modalBoxShadow.modal};
+  transition: ${({ theme }) => theme.transition.modal};
 
   @media screen and (min-width: ${({ theme }) => theme.breakpoint.tablet}) {
     width: 704px;
