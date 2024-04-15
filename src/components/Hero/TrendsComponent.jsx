@@ -9,23 +9,10 @@ import {
 } from "./Hero.styled";
 import { Container } from "../Container/Container";
 import Rate from "./Rate";
-import { useState } from "react";
-import MovieTrailerModal from "./MovieTrailerModal";
-import MovieDetailsModal from "./MovieDetailsModal";
+import { Link } from "react-router-dom";
 
-const TrendsComponent = ({ trends, timer }) => {
+const TrendsComponent = ({ trends }) => {
   let currentRate = (((trends.vote_average * 100) / 10) * 5) / 100;
-  const [isModalTrailerOpen, setIsModalTrailerOpen] = useState(false);
-  const [isModalDetailsOpen, setIsModalDetailsOpen] = useState(false);
-
-  const trailerClick = () => {
-    setIsModalTrailerOpen(true);
-    clearTimeout(timer);
-  };
-  const detailsClick = () => {
-    setIsModalDetailsOpen(true);
-    clearTimeout(timer);
-  };
 
   return (
     <>
@@ -39,23 +26,15 @@ const TrendsComponent = ({ trends, timer }) => {
             <HeroParagraph>{trends.overview}</HeroParagraph>
           </HeroTextWrapper>
           <ButtonWrapper>
-            <ButtonStart onClick={trailerClick}>Watch trailer</ButtonStart>
-            <ButtonStart onClick={detailsClick}>More details</ButtonStart>
+            <ButtonStart>
+              <Link to={`/trailer/${trends.id}`}>Watch trailer</Link>
+            </ButtonStart>
+            <ButtonStart>
+              <Link to={`/catalog/${trends.id}`}>More details</Link>
+            </ButtonStart>
           </ButtonWrapper>
         </Container>
       </Background>
-      {isModalTrailerOpen && (
-        <MovieTrailerModal
-          onClose={() => setIsModalTrailerOpen(false)}
-          movieId={trends.id}
-        />
-      )}
-      {isModalDetailsOpen && (
-        <MovieDetailsModal
-          onClose={() => setIsModalDetailsOpen(false)}
-          movieId={trends.id}
-        />
-      )}
     </>
   );
 };

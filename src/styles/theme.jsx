@@ -20,6 +20,7 @@ export const theme = {
     },
     modalBoxShadow: {
       modal: "1px 1px 14px 4px rgba(0, 0, 0, 0.22)",
+      cards: "0px 0px 23px 18px rgba(0, 0, 0, 0.22)",
     },
     breakpoint: {
       mobile: "320px",
@@ -48,6 +49,7 @@ export const theme = {
     },
     modalBoxShadow: {
       modal: "1px 1px 14px 4px rgba(255, 107, 8, 0.42)",
+      cards: "0px 0px 23px 18px rgba(255, 107, 8, 0.42)",
     },
     breakpoint: {
       mobile: "320px",

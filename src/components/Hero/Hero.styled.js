@@ -118,7 +118,7 @@ export const HeroTitle = styled.h1`
 
   @media screen and (min-width: ${({ theme }) => theme.breakpoint.desktop}) {
     font-size: 64px;
-    width: 464px;
+    width: 564px;
     height: 150px;
   }
 `;
@@ -273,6 +273,7 @@ export const ModalContentTrailer = styled.div`
   overflow: auto;
   z-index: 1200;
   overflow: visible;
+  padding: 52px 16px 52px 16px;
 
   @media screen and (min-width: 768px) {
     min-width: 592px;

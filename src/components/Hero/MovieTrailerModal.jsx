@@ -1,26 +1,25 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { selectTrailer } from "../../redux/selectors";
+import { selectIsLoading, selectTrailer } from "../../redux/selectors";
 import { getTrailer } from "../../redux/movieThunk";
-import { Overlay, ModalContentTrailer } from "./Hero.styled";
+import {
+  Overlay,
+  ModalContentTrailer,
+  CloseBtn,
+  CloseIcon,
+} from "./Hero.styled";
 import ReactPlayer from "react-player/youtube";
+import Loader from "../Loader/Loader";
+import { useParams, Link, useLocation } from "react-router-dom";
+import closeSvg from "../../images/sprite.svg";
 
-const MovieTrailerModal = ({ onClose, movieId }) => {
+const MovieTrailerModal = () => {
+  const { movieId } = useParams();
   const trailer = useSelector(selectTrailer);
+  const isLoading = useSelector(selectIsLoading);
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    const handleKeyDown = (e) => {
-      if (e.code === "Escape") {
-        onClose();
-      }
-    };
-
-    window.addEventListener("keydown", handleKeyDown);
-    return () => {
-      window.removeEventListener("keydown", handleKeyDown);
-    };
-  }, [onClose]);
+  const location = useLocation();
+  const linkBack = useRef(location.state?.from ?? "/");
 
   useEffect(() => {
     dispatch(getTrailer(movieId));
@@ -30,9 +29,20 @@ const MovieTrailerModal = ({ onClose, movieId }) => {
 
   return (
     <>
-      <Overlay onClick={onClose} />
+      <Overlay />
       <ModalContentTrailer>
-        <ReactPlayer url={videoUrl} controls></ReactPlayer>
+        <Link to={linkBack.current}>
+          <CloseBtn>
+            <CloseIcon>
+              <use href={`${closeSvg}#icon-outline`}></use>
+            </CloseIcon>
+          </CloseBtn>
+        </Link>
+        {isLoading ? (
+          <Loader />
+        ) : (
+          <ReactPlayer url={videoUrl} controls></ReactPlayer>
+        )}
       </ModalContentTrailer>
     </>
   );
