@@ -241,7 +241,8 @@ export const ModalContent = styled.div`
   top: 50%;
   left: 50%;
   z-index: 1200;
-  overflow: visible;
+  overflow: auto;
+  height: 100%;
   padding: 52px 16px 52px 16px;
   min-width: 280px;
   border-radius: 16px;
