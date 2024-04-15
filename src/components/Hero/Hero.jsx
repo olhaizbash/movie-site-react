@@ -16,7 +16,10 @@ import TrendsComponent from "./TrendsComponent";
 const Hero = () => {
   const dispatch = useDispatch();
   const trends = useSelector(selectTrends);
-  const [currentMovie, setCurrentMovie] = useState(0);
+
+  const randomNumber = Math.floor(Math.random() * (19 - 0 + 1) + 0);
+
+  const [currentMovie, setCurrentMovie] = useState(randomNumber);
   const [timer, setTimer] = useState(null);
 
   useEffect(() => {
