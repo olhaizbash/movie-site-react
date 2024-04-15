@@ -1,4 +1,4 @@
-import{u as t}from"./index-HkNwJyxK.js";const a=t.div`
+import{u as t}from"./index-D6RuDRy8.js";const a=t.div`
   width: 100%;
   padding-left: 20px;
   padding-right: 20px;
@@ -19,4 +19,4 @@ import{u as t}from"./index-HkNwJyxK.js";const a=t.div`
     padding-left: 32px;
     padding-right: 32px;
   }
-`,p="/movie-site-react/assets/sprite-Crds581c.svg";export{a as C,p as c};
+`;export{a as C};

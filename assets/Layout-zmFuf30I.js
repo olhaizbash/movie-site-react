@@ -1,4 +1,4 @@
-import{u as i,N as l,a as h,s as x,b as g,r as a,j as t,c as m,L as u,O as b}from"./index-HkNwJyxK.js";import{c,C as f}from"./sprite-BXhZ5gOv.js";const v=i.div`
+import{u as i,N as l,a as h,s as x,b as g,r as a,j as t,c,d as m,L as u,O as b}from"./index-D6RuDRy8.js";import{C as f}from"./Container-CB3dPrOM.js";const v=i.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -196,7 +196,7 @@ cursor: pointer;
     width: 11px;
     height: 11px;
   }
-`,S=i.svg`
+`,z=i.svg`
   width: 8px;
   height: 8px;
   animation: togglerDark 0.5s linear;
@@ -218,4 +218,4 @@ cursor: pointer;
     width: 11px;
     height: 11px;
   }
-`,z=()=>{const e=h(x),n=g(),[o,d]=a.useState(!0),p=()=>{n(m(e==="light"?"dark":"light")),d(!o)};return t.jsxs(N,{onClick:p,children:[e==="light"&&t.jsx(M,{children:t.jsx("use",{href:`${c}#icon-sun`})}),e==="dark"&&t.jsx(S,{children:t.jsx("use",{href:`${c}#icon-moon`})})]})},O=()=>{const[e,n]=a.useState(!1);return a.useEffect(()=>{e?document.body.style.overflow="hidden":document.body.style.overflow="visible"},[e]),t.jsx("header",{children:t.jsxs(f,{children:[t.jsxs(v,{children:[t.jsxs(y,{to:"/",children:[t.jsx(k,{children:t.jsx("use",{href:T+"#logo"})}),t.jsx(j,{children:"Cinemania"})]}),t.jsx($,{className:e?"nav-active":"",children:t.jsxs(C,{children:[t.jsx(r,{children:t.jsx(s,{to:"/",onClick:()=>{n(!1)},children:"Home"})}),t.jsx(r,{children:t.jsx(s,{to:"/catalog",onClick:()=>{n(!1)},children:"Catalog"})}),t.jsx(r,{children:t.jsx(s,{to:"/mylibrary",onClick:()=>{n(!1)},children:"My library"})})]})}),t.jsx(w,{onClick:()=>{n(!e)},children:"Menu"}),t.jsx(z,{})]}),t.jsx(L,{className:e?"backdrop-open":"",onClick:o=>{o.target===o.currentTarget?n(!e):n(!0)}})]})})},B=()=>t.jsx(t.Fragment,{children:t.jsx("p",{children:"Footer"})}),X=()=>t.jsxs(t.Fragment,{children:[t.jsx(O,{}),t.jsx("main",{children:t.jsx(a.Suspense,{fallback:t.jsx(u,{}),children:t.jsx(b,{})})}),t.jsx(B,{})]});export{X as default};
+`,O=()=>{const e=h(x),n=g(),[o,d]=a.useState(!0),p=()=>{n(m(e==="light"?"dark":"light")),d(!o)};return t.jsxs(N,{onClick:p,children:[e==="light"&&t.jsx(M,{children:t.jsx("use",{href:`${c}#icon-sun`})}),e==="dark"&&t.jsx(z,{children:t.jsx("use",{href:`${c}#icon-moon`})})]})},S=()=>{const[e,n]=a.useState(!1);return a.useEffect(()=>{e?document.body.style.overflow="hidden":document.body.style.overflow="visible"},[e]),t.jsx("header",{children:t.jsxs(f,{children:[t.jsxs(v,{children:[t.jsxs(y,{to:"/",children:[t.jsx(k,{children:t.jsx("use",{href:T+"#logo"})}),t.jsx(j,{children:"Cinemania"})]}),t.jsx($,{className:e?"nav-active":"",children:t.jsxs(C,{children:[t.jsx(r,{children:t.jsx(s,{to:"/",onClick:()=>{n(!1)},children:"Home"})}),t.jsx(r,{children:t.jsx(s,{to:"/catalog",onClick:()=>{n(!1)},children:"Catalog"})}),t.jsx(r,{children:t.jsx(s,{to:"/mylibrary",onClick:()=>{n(!1)},children:"My library"})})]})}),t.jsx(w,{onClick:()=>{n(!e)},children:"Menu"}),t.jsx(O,{})]}),t.jsx(L,{className:e?"backdrop-open":"",onClick:o=>{o.target===o.currentTarget?n(!e):n(!0)}})]})})},B=()=>t.jsx(t.Fragment,{children:t.jsx("p",{children:"Footer"})}),X=()=>t.jsxs(t.Fragment,{children:[t.jsx(S,{}),t.jsx("main",{children:t.jsx(a.Suspense,{fallback:t.jsx(u,{}),children:t.jsx(b,{})})}),t.jsx(B,{})]});export{X as default};
