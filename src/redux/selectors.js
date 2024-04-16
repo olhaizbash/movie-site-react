@@ -4,3 +4,4 @@ export const selectTheme = (state) => state.options.theme;
 export const selectTrailer = (state) => state.movie.trailer;
 export const selectCurrentMovie = (state) => state.movie.currentMovie;
 export const selectFavorites = (state) => state.movie.favorites;
+export const selectUpcomingMovie = (state) => state.movie.upcomingMovie;

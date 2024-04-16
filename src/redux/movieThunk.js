@@ -3,6 +3,7 @@ import {
   getMovieDetails,
   getMovieTrailer,
   getTrendMovies,
+  getUpcoming,
 } from "../services/api";
 
 export const getTrend = createAsyncThunk(
@@ -36,6 +37,18 @@ export const getDetails = createAsyncThunk(
     try {
       console.log(movieId);
       const movie = await getMovieDetails(movieId);
+      return movie;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
+export const getUpcomingMovie = createAsyncThunk(
+  "movie/getUpcoming",
+  async (_, thunkAPI) => {
+    try {
+      const movie = await getUpcoming();
       return movie;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);

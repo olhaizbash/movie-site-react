@@ -72,7 +72,7 @@ export const WeeklyTrendsLinkCategory = styled(Link)`
 export const WeeklyTrendsList = styled.ul`
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
 
   @media screen and (min-width: ${({ theme }) => theme.breakpoint.tablet}) {
     flex-direction: row;
