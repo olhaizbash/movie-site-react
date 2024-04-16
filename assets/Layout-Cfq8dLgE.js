@@ -1,4 +1,4 @@
-import{u as i,N as l,a as h,s as x,b as g,r as a,j as t,c,d as m,L as u,O as b}from"./index-B7PlPFc6.js";import{C as f}from"./Container-DCl-7X8V.js";const v=i.div`
+import{u as i,N as p,a as m,s as f,b as u,r,j as t,c as o,d as b,L as j,O as v}from"./index-B91SjSSB.js";import{C as h}from"./Container-CKgwVkW4.js";const y=i.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -14,10 +14,10 @@ import{u as i,N as l,a as h,s as x,b as g,r as a,j as t,c,d as m,L as u,O as b}f
     padding-top: 6px;
     padding-bottom: 6px;
   }
-`,y=i(l)`
+`,k=i(p)`
   display: flex;
   align-items: center;
-`,k=i.svg`
+`,w=i.svg`
   width: 30px;
   height: 24px;
 
@@ -31,7 +31,7 @@ import{u as i,N as l,a as h,s as x,b as g,r as a,j as t,c,d as m,L as u,O as b}f
     width: 48px;
     height: 48px;
   }
-`,j=i.span`
+`,$=i.span`
   display: none;
   color: ${({theme:e})=>e.color.logoText};
   transition: color ${({theme:e})=>e.transition.main};
@@ -56,7 +56,7 @@ import{u as i,N as l,a as h,s as x,b as g,r as a,j as t,c,d as m,L as u,O as b}f
       color: ${({theme:e})=>e.color.orange};
     }
   }
-`,w=i.button`
+`,L=i.button`
 display: none;
     
     @media screen and (max-width: 767px) {
@@ -72,7 +72,7 @@ line-height: 1.16;
 cursor: pointer;
     }
 }
-`,$=i.nav`
+`,T=i.nav`
   @media screen and (max-width: 767px) {
     opacity: 0;
     visibility: hidden;
@@ -117,7 +117,7 @@ cursor: pointer;
     display: flex;
     gap: 32px;
   }
-`,r=i.li`
+`,a=i.li`
   color: ${({theme:e})=>e.color.textchange};
   transition: color ${({theme:e})=>e.transition.main};
   position: relative;
@@ -126,7 +126,7 @@ cursor: pointer;
   &:focus {
     color: ${({theme:e})=>e.color.orange};
   }
-`,s=i(l)`
+`,l=i(p)`
   text-transform: uppercase;
   font-weight: 500;
   font-size: 14px;
@@ -143,7 +143,7 @@ cursor: pointer;
       left: 0px;
     }
   }
-`,L=i.div`
+`,F=i.div`
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
@@ -162,7 +162,7 @@ cursor: pointer;
       z-index: 2;
     }
   }
-`,T="/movie-site-react/assets/favicon-V8-NnNKM.svg",N=i.div`
+`,N="/movie-site-react/assets/favicon-V8-NnNKM.svg",z=i.div`
   cursor: pointer;
   width: 44px;
   height: 18px;
@@ -175,7 +175,7 @@ cursor: pointer;
     height: 24px;
     padding: 5px;
   }
-`,M=i.svg`
+`,S=i.svg`
   width: 8px;
   height: 8px;
   animation: togglerLight 0.5s linear;
@@ -196,7 +196,7 @@ cursor: pointer;
     width: 11px;
     height: 11px;
   }
-`,z=i.svg`
+`,I=i.svg`
   width: 8px;
   height: 8px;
   animation: togglerDark 0.5s linear;
@@ -218,4 +218,44 @@ cursor: pointer;
     width: 11px;
     height: 11px;
   }
-`,O=()=>{const e=h(x),n=g(),[o,d]=a.useState(!0),p=()=>{n(m(e==="light"?"dark":"light")),d(!o)};return t.jsxs(N,{onClick:p,children:[e==="light"&&t.jsx(M,{children:t.jsx("use",{href:`${c}#icon-sun`})}),e==="dark"&&t.jsx(z,{children:t.jsx("use",{href:`${c}#icon-moon`})})]})},S=()=>{const[e,n]=a.useState(!1);return a.useEffect(()=>{e?document.body.style.overflow="hidden":document.body.style.overflow="visible"},[e]),t.jsx("header",{children:t.jsxs(f,{children:[t.jsxs(v,{children:[t.jsxs(y,{to:"/",children:[t.jsx(k,{children:t.jsx("use",{href:T+"#logo"})}),t.jsx(j,{children:"Cinemania"})]}),t.jsx($,{className:e?"nav-active":"",children:t.jsxs(C,{children:[t.jsx(r,{children:t.jsx(s,{to:"/",onClick:()=>{n(!1)},children:"Home"})}),t.jsx(r,{children:t.jsx(s,{to:"/catalog",onClick:()=>{n(!1)},children:"Catalog"})}),t.jsx(r,{children:t.jsx(s,{to:"/mylibrary",onClick:()=>{n(!1)},children:"My library"})})]})}),t.jsx(w,{onClick:()=>{n(!e)},children:"Menu"}),t.jsx(O,{})]}),t.jsx(L,{className:e?"backdrop-open":"",onClick:o=>{o.target===o.currentTarget?n(!e):n(!0)}})]})})},B=()=>t.jsx(t.Fragment,{children:t.jsx("p",{children:"Footer"})}),X=()=>t.jsxs(t.Fragment,{children:[t.jsx(S,{}),t.jsx("main",{children:t.jsx(a.Suspense,{fallback:t.jsx(u,{}),children:t.jsx(b,{})})}),t.jsx(B,{})]});export{X as default};
+`,M=()=>{const e=m(f),n=u(),[s,x]=r.useState(!0),g=()=>{n(b(e==="light"?"dark":"light")),x(!s)};return t.jsxs(z,{onClick:g,children:[e==="light"&&t.jsx(S,{children:t.jsx("use",{href:`${o}#icon-sun`})}),e==="dark"&&t.jsx(I,{children:t.jsx("use",{href:`${o}#icon-moon`})})]})},D=()=>{const[e,n]=r.useState(!1);return r.useEffect(()=>{e?document.body.style.overflow="hidden":document.body.style.overflow="visible"},[e]),t.jsx("header",{children:t.jsxs(h,{children:[t.jsxs(y,{children:[t.jsxs(k,{to:"/",children:[t.jsx(w,{children:t.jsx("use",{href:N+"#logo"})}),t.jsx($,{children:"Cinemania"})]}),t.jsx(T,{className:e?"nav-active":"",children:t.jsxs(C,{children:[t.jsx(a,{children:t.jsx(l,{to:"/",onClick:()=>{n(!1)},children:"Home"})}),t.jsx(a,{children:t.jsx(l,{to:"/catalog",onClick:()=>{n(!1)},children:"Catalog"})}),t.jsx(a,{children:t.jsx(l,{to:"/mylibrary",onClick:()=>{n(!1)},children:"My library"})})]})}),t.jsx(L,{onClick:()=>{n(!e)},children:"Menu"}),t.jsx(M,{})]}),t.jsx(F,{className:e?"backdrop-open":"",onClick:s=>{s.target===s.currentTarget?n(!e):n(!0)}})]})})},O=i.section`
+  padding-bottom: 20px;
+`,B=i.div`
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+`,X=i.div`
+  display: flex;
+  align-items: center;
+  gap: 10px;
+`,E=i.p`
+  color: ${({theme:e})=>e.color.textchange};
+  text-align: center;
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+`,H=i.svg`
+  width: 24px;
+  height: 24px;
+`,c=i.svg`
+  width: 24px;
+  height: 24px;
+  fill: ${({theme:e})=>e.color.logoText};
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus {
+    fill: ${({theme:e})=>e.color.orange};
+  }
+`,R=i.ul`
+  display: flex;
+  gap: 10px;
+`,d=i.a`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+`,W=()=>t.jsx(O,{children:t.jsx(h,{children:t.jsxs(B,{children:[t.jsxs(X,{children:[t.jsx(E,{children:"2024 | Developed with "}),t.jsx(H,{children:t.jsx("use",{href:`${o}#icon-heart`})})]}),t.jsxs(R,{children:[t.jsx("li",{children:t.jsx(d,{href:"https://www.linkedin.com/in/olha-izbash",target:"_blank",children:t.jsx(c,{children:t.jsx("use",{href:`${o}#icon-inkedin`})})})}),t.jsx("li",{children:t.jsx(d,{href:"https://github.com/olhaizbash",target:"_blank",children:t.jsx(c,{children:t.jsx("use",{href:`${o}#icon-github`})})})})]})]})})}),V=()=>t.jsxs(t.Fragment,{children:[t.jsx(D,{}),t.jsx("main",{children:t.jsx(r.Suspense,{fallback:t.jsx(j,{}),children:t.jsx(v,{})})}),t.jsx(W,{})]});export{V as default};
