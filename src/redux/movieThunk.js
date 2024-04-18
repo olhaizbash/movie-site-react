@@ -2,6 +2,7 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import {
   getMovieDetails,
   getMovieTrailer,
+  getSearchMovie,
   getTrendMovies,
   getUpcoming,
 } from "../services/api";
@@ -49,6 +50,18 @@ export const getUpcomingMovie = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       const movie = await getUpcoming();
+      return movie;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
+export const getSearchByName = createAsyncThunk(
+  "movie/getSearchByName",
+  async ({ query, page }, thunkAPI) => {
+    try {
+      const movie = await getSearchMovie({ query, page });
       return movie;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);

@@ -60,3 +60,10 @@ export const InputPlaceholder = styled.span`
   pointer-events: none;
   transition: 0.6s;
 `;
+
+export const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+`;

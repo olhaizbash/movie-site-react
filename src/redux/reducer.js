@@ -1,6 +1,7 @@
 import { createSlice, isAnyOf } from "@reduxjs/toolkit";
 import {
   getDetails,
+  getSearchByName,
   getTrailer,
   getTrend,
   getUpcomingMovie,
@@ -10,7 +11,7 @@ const initialState = {
   trendMovies: null,
   isLoading: false,
   favorites: null,
-  page: null,
+  searchByName: { results: [], page: null, totalPage: null },
   trailer: null,
   currentMovie: [],
   upcomingMovie: null,
@@ -50,12 +51,28 @@ const movieSlice = createSlice({
       .addCase(getUpcomingMovie.fulfilled, (state, { payload }) => {
         state.upcomingMovie = payload.results;
       })
+      .addCase(getSearchByName.fulfilled, (state, { payload }) => {
+        const results = payload.results;
+        if (state.searchByName.page === payload.page) {
+          state.searchByName.results = results;
+          state.searchByName.page = payload.page;
+          state.searchByName.totalPage = payload.total_pages;
+        } else {
+          state.searchByName.results = [
+            ...state.searchByName.results,
+            ...results,
+          ];
+          state.searchByName.page = payload.page;
+          state.searchByName.totalPage = payload.total_pages;
+        }
+      })
       .addMatcher(
         isAnyOf(
           getTrend.pending,
           getTrailer.pending,
           getDetails.pending,
-          getUpcomingMovie.pending
+          getUpcomingMovie.pending,
+          getSearchByName.pending
         ),
         (state) => {
           state.isLoading = true;
@@ -66,7 +83,8 @@ const movieSlice = createSlice({
           getTrend.rejected,
           getTrailer.rejected,
           getDetails.rejected,
-          getUpcomingMovie.rejected
+          getUpcomingMovie.rejected,
+          getSearchByName.rejected
         ),
         (state) => {
           state.isLoading = false;

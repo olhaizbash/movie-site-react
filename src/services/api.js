@@ -19,7 +19,7 @@ export const getMovieDetails = async (movieId) => {
   return data;
 };
 
-export const getSearchMovie = async (query, page) => {
+export const getSearchMovie = async ({ query, page }) => {
   const { data } = await instance.get(
     `search/movie?query=${query}&page=${page}`
   );

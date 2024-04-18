@@ -76,7 +76,8 @@ export const WeeklyTrendsList = styled.ul`
 
   @media screen and (min-width: ${({ theme }) => theme.breakpoint.tablet}) {
     flex-direction: row;
-    gap: 16px;
+    gap: 16px 15px;
+    flex-wrap: wrap;
   }
 `;
 
@@ -109,11 +110,12 @@ export const WeeklyTrendsImg = styled.img`
   display: block;
   border-radius: 5px;
   width: 100%;
+  height: 100%;
 `;
 
 export const WeeklyTrendsInfo = styled.div`
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   padding: 12px 16px;
   position: absolute;
   left: 0px;
