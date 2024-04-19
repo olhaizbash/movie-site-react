@@ -6,36 +6,32 @@ import {
   Input,
   InputPlaceholder,
   Wrapper,
+  WrapperSearch,
 } from "./CatalogSearch.styled";
 import {
   selectIsLoading,
+  selectSearchByNamePage,
   selectSearchByNameRes,
   selectSearchByNameTotalPage,
 } from "../../redux/selectors";
-import { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import Loader from "../Loader/Loader";
 import { getSearchByName } from "../../redux/movieThunk";
-import MovieList from "./MovieList";
-import { WeeklyTrendsList } from "../WeeklyTrends/WeeklyTrends.styles";
 import { AddLibraryButton } from "../Upcoming/Upcoming.styled";
+import Movie from "./Movie";
+import { useState } from "react";
 
 const CatalogSearch = () => {
   const dispatch = useDispatch();
   const searchResult = useSelector(selectSearchByNameRes);
   const totalPage = useSelector(selectSearchByNameTotalPage);
   const isLoading = useSelector(selectIsLoading);
-  const [page, setPage] = useState(1);
   const [searchParams, setSearchParams] = useSearchParams();
-
+  const page = useSelector(selectSearchByNamePage);
   const query = searchParams.get("query") ?? "";
 
-  useEffect(() => {
-    dispatch(getSearchByName({ query, page }));
-  }, [page, query, dispatch]);
-
   const onLoadMore = () => {
-    setPage((prevPage) => prevPage + 1);
+    dispatch(getSearchByName({ query, page: page + 1 }));
   };
 
   const handleSubmit = (e) => {
@@ -44,29 +40,34 @@ const CatalogSearch = () => {
     }
     setSearchParams({ query: e.target.value });
   };
+  const submitSearch = () => {
+    dispatch(getSearchByName({ query, page: 1 }));
+  };
 
   return (
     <SectionCatalog>
       <Container>
         <Wrapper>
-          <InputWrapper>
-            <Input
-              type="text"
-              placeholder=" "
-              value={query}
-              onChange={handleSubmit}
-              name="query"
-            />
-            <InputPlaceholder>Search movie</InputPlaceholder>
-          </InputWrapper>
+          <WrapperSearch>
+            <InputWrapper>
+              <Input
+                type="text"
+                placeholder=" "
+                value={query}
+                onChange={handleSubmit}
+                name="query"
+              />
+              <InputPlaceholder>Search movie</InputPlaceholder>
+            </InputWrapper>
+            <AddLibraryButton
+              style={{ width: "90px" }}
+              type="button"
+              onClick={submitSearch}>
+              Search
+            </AddLibraryButton>
+          </WrapperSearch>
           {isLoading && <Loader />}
-          {searchResult.length > 0 && (
-            <WeeklyTrendsList>
-              {searchResult?.map((el) => (
-                <MovieList el={el} key={el.id} />
-              ))}
-            </WeeklyTrendsList>
-          )}
+          {searchResult.length > 0 && <Movie searchResult={searchResult} />}
           {searchResult.length > 0 && totalPage > page && (
             <AddLibraryButton
               style={{ marginLeft: "auto", marginRight: "auto" }}

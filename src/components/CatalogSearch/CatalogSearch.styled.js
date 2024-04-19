@@ -14,7 +14,7 @@ export const SectionCatalog = styled.section`
 
 export const InputWrapper = styled.div`
   position: relative;
-
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -66,4 +66,10 @@ export const Wrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   gap: 10px;
+`;
+
+export const WrapperSearch = styled.div`
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
 `;

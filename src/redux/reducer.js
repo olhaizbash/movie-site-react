@@ -11,7 +11,7 @@ const initialState = {
   trendMovies: null,
   isLoading: false,
   favorites: null,
-  searchByName: { results: [], page: null, totalPage: null },
+  searchByName: { results: [], page: 1, totalPage: null },
   trailer: null,
   currentMovie: [],
   upcomingMovie: null,
@@ -31,17 +31,18 @@ const movieSlice = createSlice({
     removeFromFavorite: (state, { payload }) => {
       state.favorites = state.favorites.filter((el) => el.id !== payload.id);
     },
+    setPage: (state, { payload }) => {
+      state.searchByName.page = payload;
+    },
   },
   extraReducers: (builder) => {
     builder
       .addCase(getTrend.fulfilled, (state, { payload }) => {
         state.isLoading = false;
         state.trendMovies = payload.results;
-        state.page = payload.page;
       })
       .addCase(getTrailer.fulfilled, (state, { payload }) => {
         state.isLoading = false;
-        console.log(payload);
         state.trailer = payload;
       })
       .addCase(getDetails.fulfilled, (state, { payload }) => {
@@ -49,18 +50,20 @@ const movieSlice = createSlice({
         state.currentMovie = payload;
       })
       .addCase(getUpcomingMovie.fulfilled, (state, { payload }) => {
+        state.isLoading = false;
         state.upcomingMovie = payload.results;
       })
       .addCase(getSearchByName.fulfilled, (state, { payload }) => {
-        const results = payload.results;
-        if (state.searchByName.page === payload.page) {
-          state.searchByName.results = results;
+        state.isLoading = false;
+        if (payload.page === 1) {
+          state.searchByName.results = [];
+          state.searchByName.results = payload.results;
           state.searchByName.page = payload.page;
           state.searchByName.totalPage = payload.total_pages;
         } else {
           state.searchByName.results = [
             ...state.searchByName.results,
-            ...results,
+            ...payload.results,
           ];
           state.searchByName.page = payload.page;
           state.searchByName.totalPage = payload.total_pages;
@@ -93,5 +96,6 @@ const movieSlice = createSlice({
   },
 });
 
-export const { addToFavorite, removeFromFavorite } = movieSlice.actions;
+export const { addToFavorite, removeFromFavorite, setPage } =
+  movieSlice.actions;
 export const movieReducer = movieSlice.reducer;
