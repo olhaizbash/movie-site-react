@@ -1,4 +1,4 @@
-import{u as n,b as m,a as c,m as f,n as j,h as y,r as l,o as b,p as S,j as t,L as v}from"./index-BPwX3y2F.js";import{C as L}from"./Container-SZXBwtop.js";import{l as $,m as k,d as C,H as P}from"./MovieList-7E4pkT3W.js";const B=n.section`
+import{u as a,j as t,b as f,a as n,m as j,n as y,h as b,o as S,p as v,L,q as l}from"./index-BDDfpars.js";import{C as $}from"./Container-D4aF1lG5.js";import{l as k,m as C,d as p,H as w}from"./MovieList-Od__gmiK.js";const B=a.section`
   padding: 40px 0px;
 
   @media screen and (min-width: ${({theme:e})=>e.breakpoint.tablet}) {
@@ -8,13 +8,13 @@ import{u as n,b as m,a as c,m as f,n as j,h as y,r as l,o as b,p as S,j as t,L a
   @media screen and (min-width: ${({theme:e})=>e.breakpoint.desktop}) {
     padding-top: 60px;
   }
-`,w=n.div`
+`,P=a.div`
   position: relative;
-
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-`,q=n.input`
+`,q=a.input`
   width: 100%;
   padding: 1rem 1.2rem;
   border: 1px solid ${({theme:e})=>e.color.textchange};
@@ -43,7 +43,7 @@ import{u as n,b as m,a as c,m as f,n as j,h as y,r as l,o as b,p as S,j as t,L a
   &:not(:focus) + span {
     color: ${({theme:e})=>e.color.textchange};
   }
-`,I=n.span`
+`,I=a.span`
   position: absolute;
   left: 0;
   padding-left: 1.2rem;
@@ -51,9 +51,13 @@ import{u as n,b as m,a as c,m as f,n as j,h as y,r as l,o as b,p as S,j as t,L a
   color: ${({theme:e})=>e.color.textchange};
   pointer-events: none;
   transition: 0.6s;
-`,z=n.div`
+`,M=a.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 10px;
-`,E=()=>{const e=m(),a=c(f),p=c(j),d=c(y),[r,g]=l.useState(1),[u,i]=b(),s=u.get("query")??"";l.useEffect(()=>{e(S({query:s,page:r}))},[r,s,e]);const x=()=>{g(o=>o+1)},h=o=>{if(o.target.value==="")return i({});i({query:o.target.value})};return t.jsx(B,{children:t.jsx(L,{children:t.jsxs(z,{children:[t.jsxs(w,{children:[t.jsx(q,{type:"text",placeholder:" ",value:s,onChange:h,name:"query"}),t.jsx(I,{children:"Search movie"})]}),d&&t.jsx(v,{}),a.length>0&&t.jsx($,{children:a==null?void 0:a.map(o=>t.jsx(k,{el:o},o.id))}),a.length>0&&p>r&&t.jsx(C,{style:{marginLeft:"auto",marginRight:"auto"},type:"button",onClick:x,children:"Load More"})]})})})},H=()=>t.jsxs(t.Fragment,{children:[t.jsx(P,{}),t.jsx(E,{})]});export{H as default};
+`,N=a.div`
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+`,W=({searchResult:e})=>t.jsx(t.Fragment,{children:t.jsx(k,{children:e==null?void 0:e.map(o=>t.jsx(C,{el:o},o.id))})}),z=()=>{const e=f(),o=n(j),d=n(y),g=n(b),[h,s]=S(),i=n(v),r=h.get("query")??"",x=()=>{e(l({query:r,page:i+1}))},m=c=>{if(c.target.value==="")return s({});s({query:c.target.value})},u=()=>{e(l({query:r,page:1}))};return t.jsx(B,{children:t.jsx($,{children:t.jsxs(M,{children:[t.jsxs(N,{children:[t.jsxs(P,{children:[t.jsx(q,{type:"text",placeholder:" ",value:r,onChange:m,name:"query"}),t.jsx(I,{children:"Search movie"})]}),t.jsx(p,{style:{width:"90px"},type:"button",onClick:u,children:"Search"})]}),g&&t.jsx(L,{}),o.length>0&&t.jsx(W,{searchResult:o}),o.length>0&&d>i&&t.jsx(p,{style:{marginLeft:"auto",marginRight:"auto"},type:"button",onClick:x,children:"Load More"})]})})})},A=()=>t.jsxs(t.Fragment,{children:[t.jsx(w,{}),t.jsx(z,{})]});export{A as default};
