@@ -112,13 +112,13 @@ export const HeroTitle = styled.h1`
 
   @media screen and (min-width: ${({ theme }) => theme.breakpoint.tablet}) {
     font-size: 44px;
-    width: 332px;
+    width: 600px;
     height: 104px;
   }
 
   @media screen and (min-width: ${({ theme }) => theme.breakpoint.desktop}) {
     font-size: 64px;
-    width: 564px;
+    width: 700px;
     height: 150px;
   }
 `;
@@ -134,9 +134,12 @@ export const HeroParagraph = styled.p`
   font-weight: 400;
   line-height: normal;
   margin-bottom: 32px;
+
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+  overflow: hidden;
   text-overflow: ellipsis;
-  overflow-y: auto;
-  overflow-x: hidden;
 
   @media screen and (max-width: 767px) {
     font-size: 14px;
@@ -148,12 +151,14 @@ export const HeroParagraph = styled.p`
     width: 357px;
     font-size: 14px;
     height: 150px;
+    -webkit-line-clamp: 10;
   }
 
   @media screen and (min-width: ${({ theme }) => theme.breakpoint.desktop}) {
     width: 464px;
     font-size: 16px;
     height: 150px;
+    -webkit-line-clamp: 10;
   }
 `;
 
@@ -235,6 +240,33 @@ export const Overlay = styled.div`
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
     visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 `;
+
+export const ButtonBack = styled.button`
+border-radius: 74px;
+border: 1px solid var(--linear, #ffc226);
+background: transparent;
+padding: 12px 24px;
+text-align: center;
+font-family: Roboto;
+font-size: 12px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+color: ${({ theme }) => theme.color.textchange};
+cursor: pointer;
+margin-bottom: 10px;
+transition: background ${({ theme }) => theme.transition.main};
+
+&:hover,
+&:focus {
+  background: ${({ theme }) => theme.color.gradientHover};
+}
+
+@media screen and (min-width: ${({ theme }) => theme.breakpoint.tablet}) {
+  line-height: 16px;
+  margin-top: 24px;
+`;
+
 export const ModalContent = styled.div`
   translate: -50% -50%;
   position: absolute;

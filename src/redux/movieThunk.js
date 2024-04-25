@@ -23,7 +23,6 @@ export const getTrailer = createAsyncThunk(
   "movie/getTrailer",
   async (movieId, thunkAPI) => {
     try {
-      console.log(movieId);
       const movie = await getMovieTrailer(movieId);
       return movie;
     } catch (error) {
@@ -36,7 +35,6 @@ export const getDetails = createAsyncThunk(
   "movie/getMovieDetails",
   async (movieId, thunkAPI) => {
     try {
-      console.log(movieId);
       const movie = await getMovieDetails(movieId);
       return movie;
     } catch (error) {

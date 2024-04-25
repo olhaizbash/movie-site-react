@@ -1,9 +1,5 @@
 import {
-  Overlay,
-  ModalContent,
   ModalDetailsContainer,
-  CloseBtn,
-  CloseIcon,
   ModalPoster,
   TitleMovie,
   AboutMovieContainer,
@@ -11,6 +7,7 @@ import {
   SubTitleMovieDesc,
   MovieDesc,
   AddLibraryButton,
+  ButtonBack,
 } from "./Hero.styled";
 import { useEffect, useState, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -24,6 +21,7 @@ import { useParams, Link, useLocation } from "react-router-dom";
 import closeSvg from "../../images/sprite.svg";
 import { addToFavorite, removeFromFavorite } from "../../redux/reducer";
 import Loader from "../Loader/Loader";
+import { Container } from "../Container/Container";
 
 const MovieDetailsModal = () => {
   const { movieId } = useParams();
@@ -46,14 +44,9 @@ const MovieDetailsModal = () => {
 
   return (
     <>
-      <Overlay />
-      <ModalContent>
-        <Link to={linkBack.current}>
-          <CloseBtn>
-            <CloseIcon>
-              <use href={`${closeSvg}#icon-outline`}></use>
-            </CloseIcon>
-          </CloseBtn>
+      <Container>
+        <Link style={{ padding: "10px" }} to={linkBack.current}>
+          <ButtonBack>Go back</ButtonBack>
         </Link>
         {isLoading ? (
           <Loader />
@@ -105,7 +98,7 @@ const MovieDetailsModal = () => {
             </div>
           </ModalDetailsContainer>
         )}
-      </ModalContent>
+      </Container>
     </>
   );
 };

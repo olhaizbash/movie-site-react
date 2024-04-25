@@ -19,7 +19,6 @@ import Loader from "../Loader/Loader";
 import { getSearchByName } from "../../redux/movieThunk";
 import { AddLibraryButton } from "../Upcoming/Upcoming.styled";
 import Movie from "./Movie";
-import { useState } from "react";
 
 const CatalogSearch = () => {
   const dispatch = useDispatch();
@@ -67,6 +66,12 @@ const CatalogSearch = () => {
             </AddLibraryButton>
           </WrapperSearch>
           {isLoading && <Loader />}
+          {searchResult.length <= 0 && (
+            <p>
+              OOPS... We are very sorry! We don’t have any results matching your
+              search.
+            </p>
+          )}
           {searchResult.length > 0 && <Movie searchResult={searchResult} />}
           {searchResult.length > 0 && totalPage > page && (
             <AddLibraryButton

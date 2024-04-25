@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const FooterSection = styled.section`
-  padding-bottom: 20px;
+  padding: 20px 0px;
 `;
 
 export const FooterWrapper = styled.div`

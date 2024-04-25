@@ -1,8 +1,6 @@
-import { Link } from "react-router-dom";
 import { Container } from "../Container/Container";
 import { useSelector } from "react-redux";
 import { selectTrends } from "../../redux/selectors";
-import Rate from "../Hero/Rate";
 import {
   SectionWeeklyTrends,
   WeeklyTrendsWrapper,
@@ -10,10 +8,6 @@ import {
   WeeklyTrendsTitle,
   WeeklyTrendsLinkCategory,
   WeeklyTrendsList,
-  WeeklyTrendsItem,
-  WeeklyTrendsImg,
-  WeeklyTrendsInfo,
-  WeeklyTrendsInfoTitle,
 } from "./WeeklyTrends.styles";
 import MovieList from "../CatalogSearch/MovieList";
 
@@ -32,30 +26,7 @@ const WeeklyTrends = () => {
           <WeeklyTrendsList>
             {trends?.map((el, index) => {
               if (index <= 2) {
-                return (
-                  <MovieList key={el.id} el={el} />
-                  //   <WeeklyTrendsItem key={el.id}>
-                  //     <Link to={`/catalog/${el.id}`}>
-                  //       <WeeklyTrendsImg
-                  //         src={`https://image.tmdb.org/t/p/w500${el.poster_path}`}
-                  //       />
-                  //       <WeeklyTrendsInfo>
-                  //         <div>
-                  //           <WeeklyTrendsInfoTitle>
-                  //             {el.original_title}
-                  //           </WeeklyTrendsInfoTitle>
-                  //         </div>
-                  //         <div>
-                  //           <Rate
-                  //             currentRate={
-                  //               (((el.vote_average * 100) / 10) * 5) / 100
-                  //             }
-                  //           />
-                  //         </div>
-                  //       </WeeklyTrendsInfo>
-                  //     </Link>
-                  //   </WeeklyTrendsItem>
-                );
+                return <MovieList key={el.id} el={el} />;
               }
             })}
           </WeeklyTrendsList>

@@ -1,7 +1,11 @@
+import Hero from "../components/Hero/Hero";
+import LibraryList from "../components/Library/LibraryList";
+
 const Library = () => {
   return (
     <>
-      <p>Hello from library!</p>
+      <Hero />
+      <LibraryList />
     </>
   );
 };
