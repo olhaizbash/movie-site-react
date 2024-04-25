@@ -1,4 +1,4 @@
-import{u as i,N as p,a as m,s as f,b as u,r,j as t,c as o,d as b,L as j,O as v}from"./index-BDDfpars.js";import{C as h}from"./Container-D4aF1lG5.js";const y=i.div`
+import{u as i,N as p,a as m,s as f,b as u,r,j as t,c as o,d as b,C as h,L as j,O as v}from"./index-BKCxqzMs.js";const y=i.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -219,7 +219,7 @@ cursor: pointer;
     height: 11px;
   }
 `,M=()=>{const e=m(f),n=u(),[s,x]=r.useState(!0),g=()=>{n(b(e==="light"?"dark":"light")),x(!s)};return t.jsxs(z,{onClick:g,children:[e==="light"&&t.jsx(S,{children:t.jsx("use",{href:`${o}#icon-sun`})}),e==="dark"&&t.jsx(I,{children:t.jsx("use",{href:`${o}#icon-moon`})})]})},D=()=>{const[e,n]=r.useState(!1);return r.useEffect(()=>{e?document.body.style.overflow="hidden":document.body.style.overflow="visible"},[e]),t.jsx("header",{children:t.jsxs(h,{children:[t.jsxs(y,{children:[t.jsxs(k,{to:"/",children:[t.jsx(w,{children:t.jsx("use",{href:N+"#logo"})}),t.jsx($,{children:"Cinemania"})]}),t.jsx(T,{className:e?"nav-active":"",children:t.jsxs(C,{children:[t.jsx(a,{children:t.jsx(l,{to:"/",onClick:()=>{n(!1)},children:"Home"})}),t.jsx(a,{children:t.jsx(l,{to:"/catalog",onClick:()=>{n(!1)},children:"Catalog"})}),t.jsx(a,{children:t.jsx(l,{to:"/mylibrary",onClick:()=>{n(!1)},children:"My library"})})]})}),t.jsx(L,{onClick:()=>{n(!e)},children:"Menu"}),t.jsx(M,{})]}),t.jsx(F,{className:e?"backdrop-open":"",onClick:s=>{s.target===s.currentTarget?n(!e):n(!0)}})]})})},O=i.section`
-  padding-bottom: 20px;
+  padding: 20px 0px;
 `,B=i.div`
   display: flex;
   justify-content: center;
@@ -258,4 +258,4 @@ cursor: pointer;
   align-items: center;
   width: 24px;
   height: 24px;
-`,W=()=>t.jsx(O,{children:t.jsx(h,{children:t.jsxs(B,{children:[t.jsxs(X,{children:[t.jsx(E,{children:"2024 | Developed with "}),t.jsx(H,{children:t.jsx("use",{href:`${o}#icon-heart`})})]}),t.jsxs(R,{children:[t.jsx("li",{children:t.jsx(d,{href:"https://www.linkedin.com/in/olha-izbash",target:"_blank",children:t.jsx(c,{children:t.jsx("use",{href:`${o}#icon-inkedin`})})})}),t.jsx("li",{children:t.jsx(d,{href:"https://github.com/olhaizbash",target:"_blank",children:t.jsx(c,{children:t.jsx("use",{href:`${o}#icon-github`})})})})]})]})})}),V=()=>t.jsxs(t.Fragment,{children:[t.jsx(D,{}),t.jsx("main",{children:t.jsx(r.Suspense,{fallback:t.jsx(j,{}),children:t.jsx(v,{})})}),t.jsx(W,{})]});export{V as default};
+`,W=()=>t.jsx(O,{children:t.jsx(h,{children:t.jsxs(B,{children:[t.jsxs(X,{children:[t.jsx(E,{children:"2024 | Developed with "}),t.jsx(H,{children:t.jsx("use",{href:`${o}#icon-heart`})})]}),t.jsxs(R,{children:[t.jsx("li",{children:t.jsx(d,{href:"https://www.linkedin.com/in/olha-izbash",target:"_blank",children:t.jsx(c,{children:t.jsx("use",{href:`${o}#icon-inkedin`})})})}),t.jsx("li",{children:t.jsx(d,{href:"https://github.com/olhaizbash",target:"_blank",children:t.jsx(c,{children:t.jsx("use",{href:`${o}#icon-github`})})})})]})]})})}),P=()=>t.jsxs(t.Fragment,{children:[t.jsx(D,{}),t.jsx("main",{children:t.jsx(r.Suspense,{fallback:t.jsx(j,{}),children:t.jsx(v,{})})}),t.jsx(W,{})]});export{P as default};
