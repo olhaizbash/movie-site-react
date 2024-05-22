@@ -1,5 +1,4 @@
 import { getUpcomingMovie } from "../../redux/movieThunk";
-import { addToFavorite, removeFromFavorite } from "../../redux/reducer";
 import {
   selectFavorites,
   selectIsLoading,

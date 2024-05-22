@@ -23,10 +23,16 @@ const movieSlice = createSlice({
   reducers: {
     addToFavorite: (state, { payload }) => {
       console.log(payload);
-      let exist = state.favorites.findIndex((el) => el.id === payload.id);
-      exist >= 0
-        ? console.log("This book is already in your library")
-        : state.favorites.push(payload);
+      if (state.favorites === null) {
+        state.favorites = [];
+        state.favorites.push(payload);
+      } else {
+        console.log(payload);
+        let exist = state.favorites.findIndex((el) => el.id === payload.id);
+        exist >= 0
+          ? console.log("This book is already in your library")
+          : state.favorites.push(payload);
+      }
     },
     removeFromFavorite: (state, { payload }) => {
       state.favorites = state.favorites.filter((el) => el.id !== payload.id);

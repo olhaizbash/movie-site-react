@@ -21,7 +21,7 @@ const UpcomingDetails = ({ favorites, upcomingMovie }) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const exist = favorites.findIndex((el) => el.id === currentMovie?.id);
+    const exist = favorites?.findIndex((el) => el.id === currentMovie?.id);
     exist >= 0 ? setInList(true) : setInList(false);
   }, [favorites, currentMovie]);
 

@@ -19,6 +19,7 @@ import Loader from "../Loader/Loader";
 import { getSearchByName } from "../../redux/movieThunk";
 import { AddLibraryButton } from "../Upcoming/Upcoming.styled";
 import Movie from "./Movie";
+import { useState } from "react";
 
 const CatalogSearch = () => {
   const dispatch = useDispatch();
@@ -27,10 +28,12 @@ const CatalogSearch = () => {
   const isLoading = useSelector(selectIsLoading);
   const [searchParams, setSearchParams] = useSearchParams();
   const page = useSelector(selectSearchByNamePage);
+  const [curPage, setCurPage] = useState(page);
   const query = searchParams.get("query") ?? "";
 
   const onLoadMore = () => {
-    dispatch(getSearchByName({ query, page: page + 1 }));
+    setCurPage((prev) => prev + 1);
+    dispatch(getSearchByName({ query, page: curPage }));
   };
 
   const handleSubmit = (e) => {
