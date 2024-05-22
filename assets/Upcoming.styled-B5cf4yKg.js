@@ -1,4 +1,4 @@
-import{u as e}from"./index-BKCxqzMs.js";const o=e.section`
+import{u as e}from"./index-v-dK_4Bx.js";const o=e.section`
   padding: 40px 0px;
 
   @media screen and (min-width: ${({theme:t})=>t.breakpoint.tablet}) {
